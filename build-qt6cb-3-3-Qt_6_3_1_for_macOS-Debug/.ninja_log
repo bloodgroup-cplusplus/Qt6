@@ -1,0 +1,14 @@
+# ninja log v5
+0	44	1657960675599499197	qt6cb-3-3_autogen/timestamp	707bc6da545bb921
+0	44	1657960675599499197	qt6cb-3-3_autogen/mocs_compilation.cpp	707bc6da545bb921
+0	44	1657960675599499197	/Users/bhushansharma/Programs/Qt6/build-qt6cb-3-3-Qt_6_3_1_for_macOS-Debug/qt6cb-3-3_autogen/timestamp	707bc6da545bb921
+0	44	1657960675599499197	/Users/bhushansharma/Programs/Qt6/build-qt6cb-3-3-Qt_6_3_1_for_macOS-Debug/qt6cb-3-3_autogen/mocs_compilation.cpp	707bc6da545bb921
+44	66	1657960675625665851	CMakeFiles/qt6cb-3-3.dir/qt6cb-3-3_autogen/mocs_compilation.cpp.o	89e0931bcaa632de
+44	586	1657960676142910729	CMakeFiles/qt6cb-3-3.dir/main.cpp.o	f8feb1cda69d827e
+587	624	1657960676183720549	qt6cb-3-3	28d7b5d18b40a7b2
+2	22	1657960823679208784	qt6cb-3-3_autogen/timestamp	707bc6da545bb921
+2	22	1657960823679208784	qt6cb-3-3_autogen/mocs_compilation.cpp	707bc6da545bb921
+2	22	1657960823679208784	/Users/bhushansharma/Programs/Qt6/build-qt6cb-3-3-Qt_6_3_1_for_macOS-Debug/qt6cb-3-3_autogen/timestamp	707bc6da545bb921
+2	22	1657960823679208784	/Users/bhushansharma/Programs/Qt6/build-qt6cb-3-3-Qt_6_3_1_for_macOS-Debug/qt6cb-3-3_autogen/mocs_compilation.cpp	707bc6da545bb921
+22	522	1657960824176130471	CMakeFiles/qt6cb-3-3.dir/main.cpp.o	f8feb1cda69d827e
+522	555	1657960824211476666	qt6cb-3-3	28d7b5d18b40a7b2
