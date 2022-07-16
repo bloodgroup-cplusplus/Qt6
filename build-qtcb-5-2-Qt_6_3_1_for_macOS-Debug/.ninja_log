@@ -1,0 +1,26 @@
+# ninja log v5
+0	44	1657972709055419061	qtcb-5-2_autogen/timestamp	77eacde69335d8f8
+0	44	1657972709055419061	qtcb-5-2_autogen/mocs_compilation.cpp	77eacde69335d8f8
+0	44	1657972709055419061	/Users/bhushansharma/Programs/Qt6/build-qtcb-5-2-Qt_6_3_1_for_macOS-Debug/qtcb-5-2_autogen/timestamp	77eacde69335d8f8
+0	44	1657972709055419061	/Users/bhushansharma/Programs/Qt6/build-qtcb-5-2-Qt_6_3_1_for_macOS-Debug/qtcb-5-2_autogen/mocs_compilation.cpp	77eacde69335d8f8
+44	66	1657972709081679286	CMakeFiles/qtcb-5-2.dir/qtcb-5-2_autogen/mocs_compilation.cpp.o	7f70b2c3c1c13ede
+44	602	1657972709615347779	CMakeFiles/qtcb-5-2.dir/main.cpp.o	392cff48b4adb729
+603	640	1657972709655243101	qtcb-5-2	76b87a2045bd5a73
+2	23	1657974169854940406	qtcb-5-2_autogen/timestamp	77eacde69335d8f8
+2	23	1657974169854940406	qtcb-5-2_autogen/mocs_compilation.cpp	77eacde69335d8f8
+2	23	1657974169854940406	/Users/bhushansharma/Programs/Qt6/build-qtcb-5-2-Qt_6_3_1_for_macOS-Debug/qtcb-5-2_autogen/timestamp	77eacde69335d8f8
+2	23	1657974169854940406	/Users/bhushansharma/Programs/Qt6/build-qtcb-5-2-Qt_6_3_1_for_macOS-Debug/qtcb-5-2_autogen/mocs_compilation.cpp	77eacde69335d8f8
+23	597	1657974170426065288	CMakeFiles/qtcb-5-2.dir/main.cpp.o	392cff48b4adb729
+597	630	1657974170461867454	qtcb-5-2	76b87a2045bd5a73
+2	23	1657974475123165433	qtcb-5-2_autogen/timestamp	77eacde69335d8f8
+2	23	1657974475123165433	qtcb-5-2_autogen/mocs_compilation.cpp	77eacde69335d8f8
+2	23	1657974475123165433	/Users/bhushansharma/Programs/Qt6/build-qtcb-5-2-Qt_6_3_1_for_macOS-Debug/qtcb-5-2_autogen/timestamp	77eacde69335d8f8
+2	23	1657974475123165433	/Users/bhushansharma/Programs/Qt6/build-qtcb-5-2-Qt_6_3_1_for_macOS-Debug/qtcb-5-2_autogen/mocs_compilation.cpp	77eacde69335d8f8
+24	589	1657974475686695070	CMakeFiles/qtcb-5-2.dir/main.cpp.o	392cff48b4adb729
+590	623	1657974475722766556	qtcb-5-2	76b87a2045bd5a73
+2	23	1657974718401747551	qtcb-5-2_autogen/timestamp	77eacde69335d8f8
+2	23	1657974718401747551	qtcb-5-2_autogen/mocs_compilation.cpp	77eacde69335d8f8
+2	23	1657974718401747551	/Users/bhushansharma/Programs/Qt6/build-qtcb-5-2-Qt_6_3_1_for_macOS-Debug/qtcb-5-2_autogen/timestamp	77eacde69335d8f8
+2	23	1657974718401747551	/Users/bhushansharma/Programs/Qt6/build-qtcb-5-2-Qt_6_3_1_for_macOS-Debug/qtcb-5-2_autogen/mocs_compilation.cpp	77eacde69335d8f8
+23	585	1657974718961928410	CMakeFiles/qtcb-5-2.dir/main.cpp.o	392cff48b4adb729
+586	620	1657974718998285929	qtcb-5-2	76b87a2045bd5a73
