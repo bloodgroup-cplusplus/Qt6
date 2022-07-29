@@ -22,7 +22,7 @@ add_executable(DoodleDrawerServer
   websockethandler.h
 )
 target_link_libraries(DoodleDrawerServer Qt${QT_VERSION_MAJOR}::Core)
- target_link_libraries(DoodleDrawerServer  Qt${QT_VERSION_MAJOR}:WebSockets)
+ target_link_libraries(DoodleDrawerServer  Qt${QT_VERSION_MAJOR}::WebSockets)
 
 install(TARGETS DoodleDrawerServer
     LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR})
