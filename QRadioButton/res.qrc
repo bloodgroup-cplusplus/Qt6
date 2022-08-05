@@ -1,0 +1,7 @@
+<RCC>
+    <qresource prefix="/images">
+        <file>Python-logo-notext.svg.png</file>
+        <file>Java_programming_language_logo.svg.png</file>
+        <file>c++.png</file>
+    </qresource>
+</RCC>
