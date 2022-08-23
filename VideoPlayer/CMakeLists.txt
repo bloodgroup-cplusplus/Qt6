@@ -7,16 +7,26 @@ set(CMAKE_AUTOMOC ON)
 set(CMAKE_AUTORCC ON)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-include_directories(${/Users/bhushansharma/Programs/Qt6/opencv/build})
-link_directories(${/Users/bhushansharma/Programs/Qt6/opencv/build/bin})
+# set include directory
 find_package(Qt6 6.2 COMPONENTS Quick REQUIRED)
 find_package(Qt6 6.2 COMPONENTS Core REQUIRED)
 find_package(Qt6 6.2 COMPONENTS Multimedia REQUIRED)
+find_package(OpenCV REQUIRED)
+
+
+# set include directory
+
+include_directories(${OpenCV_INCLUDE_DIRS})
+
 
 qt_add_executable(appVideoPlayer
 
     main.cpp
     res.qrc    
+    opencvimageprovider.cpp
+    opencvimageprovider.h
+    vidoestreamer.cpp
+    vidoestreamer.h
 )
 
 
@@ -38,7 +48,7 @@ set_target_properties(appVideoPlayer PROPERTIES
 target_link_libraries(appVideoPlayer
     PRIVATE Qt6::Quick)
 target_link_libraries(appVideoPlayer PRIVATE Qt6::Multimedia)
-target_link_libraries(appVideoPlayer   ${/Users/bhushansharma/Programs/Qt6/opencv/build/libs})
+#target_link_libraries(appVideoPlayer PUBLIC  OpenCV)
 
 
 install(TARGETS appVideoPlayer
