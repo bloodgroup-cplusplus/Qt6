@@ -5,3 +5,9 @@ VidoeStreamer::VidoeStreamer(QObject *parent)
 {
 
 }
+
+VidoeStreamer::~VidoeStreamer()
+{
+    delete this;
+
+}

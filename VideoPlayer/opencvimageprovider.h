@@ -10,6 +10,7 @@ class OpenCvImageProvider : public QObject
     Q_OBJECT
 public:
     explicit OpenCvImageProvider(QObject *parent = nullptr);
+    ~OpenCvImageProvider();
     QImage requestImage(const QString &id, QSize *size, const QSize &requestedSize) ;;
 public slots:
     void updateImage(const QImage &image);
