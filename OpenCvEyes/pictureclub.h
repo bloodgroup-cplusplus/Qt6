@@ -7,21 +7,33 @@
 
 class PictureClub
 {
+    typedef std::vector<cv::Rect> Rect_vector;
 public:
     PictureClub(int argc, char * argv[]);
     ~PictureClub();
 
-    void DetectFace(void);
-    void DetectEyes(const cv::Rect&);
+    // Detect face
+    // ret std::vector of cv::Rect
+
+   Rect_vector  DetectFace(void);
+
+
+    // detect eyes
+    //return std::vector of cv::REct
+    Rect_vector DetectEyes(const cv::Rect&);
+    //Enlarge supplied region
+    //ret :None
     void GrabImage(void);
     void GrabImage(const cv::Mat image);
     void cvtGray();
+    void EnlargeRects( const cv::Rect &);
 
     const cv::Size &getProcessing_size() const;
     void setProcessing_size(const cv::Size &newProcessing_size);
-    void ShowImage(void)
+    void ShowImage(const std::string wname = "Debug Show")
+
     {
-        cv::imshow("Debug Show", capture_image);
+        cv::imshow(wname, capture_image);
         cv::waitKey();
     }
 
