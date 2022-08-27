@@ -4,14 +4,12 @@
 #include <QObject>
 #include<QImage>
 #include<QQuickImageProvider>
-
-class OpenCvImageProvider : public QObject
+class OpenCvImageProvider :  public QQuickImageProvider
 {
     Q_OBJECT
 public:
-    explicit OpenCvImageProvider(QObject *parent = nullptr);
-    ~OpenCvImageProvider();
-    QImage requestImage(const QString &id, QSize *size, const QSize &requestedSize) ;;
+      OpenCvImageProvider(QObject *parent = nullptr);
+    QImage requestImage(const QString &id, QSize *size, const QSize &requestedSize) override;
 public slots:
     void updateImage(const QImage &image);
 

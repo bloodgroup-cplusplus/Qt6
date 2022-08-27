@@ -48,7 +48,7 @@ set_target_properties(appVideoPlayer PROPERTIES
 target_link_libraries(appVideoPlayer
     PRIVATE Qt6::Quick)
 target_link_libraries(appVideoPlayer PRIVATE Qt6::Multimedia)
-#target_link_libraries(appVideoPlayer PUBLIC  OpenCV)
+target_link_libraries(appVideoPlayer PUBLIC  ${OpenCV_LIBS})
 
 
 install(TARGETS appVideoPlayer

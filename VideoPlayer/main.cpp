@@ -1,21 +1,26 @@
 #include <QGuiApplication>
 #include <QQmlApplicationEngine>
+#include <QQmlContext>
+#include "vidoestreamer.h"
+#include "opencvimageprovider.h"
 #include "../opencv/build/opencv2/opencv_modules.hpp"
-#include "../opencv/include/opencv2/opencv.hpp"
-#include "../opencv/modules/imgproc/include/opencv2/imgproc.hpp"
-#include "../opencv/modules/imgcodecs/include/opencv2/imgcodecs.hpp"
-#include "../opencv/modules/highgui/include/opencv2/highgui.hpp"
 
 
 using namespace cv;
 int main(int argc, char *argv[])
 {
 
-    qputenv("QT_IM_MODULE", QByteArray("qtvirtualkeyboard"));
+   // qputenv("QT_IM_MODULE", QByteArray("qtvirtualkeyboard"));
 
     QGuiApplication app(argc, argv);
 
     QQmlApplicationEngine engine;
+    VidoeStreamer videoStreamer;
+    OpenCvImageProvider *liveImageProvider(new OpenCvImageProvider);
+    engine.rootContext()->setContextProperty("VidoeStreamer", &videoStreamer);
+    engine.addImageProvider("live",liveImageProvider) ;
+    engine.rootContext()->setContextProperty("liveImageProvider",liveImageProvider);
+
     const QUrl url(u"qrc:/VideoPlayer/main.qml"_qs);
     QObject::connect(&engine, &QQmlApplicationEngine::objectCreated,
                      &app, [url](QObject *obj, const QUrl &objUrl) {

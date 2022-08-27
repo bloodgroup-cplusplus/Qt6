@@ -1,10 +1,10 @@
 #ifndef VIDOESTREAMER_H
 #define VIDOESTREAMER_H
-
 #include <QObject>
 #include<QTimer>
 #include "../opencv/modules/highgui/include/opencv2/highgui.hpp"
-#include "opencv2/imgproc.hpp"
+#include "../opencv/modules/imgproc/include/opencv2/imgproc.hpp"
+#include <iostream>
 #include<QImage>
 #include<iostream>
 
@@ -19,7 +19,7 @@ public:
     void streamVideo();
 
 public slots:
-    void openVideoCamera(QString path);
+    void openVideoCamera();
 
 private:
     cv::Mat frame;

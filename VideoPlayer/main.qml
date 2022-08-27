@@ -12,6 +12,7 @@ Window {
 
     MediaPlayer
     {
+
         id:player
         source : "qrc:/video/videoplayback.mp4"
         audioOutput: audioOutput
@@ -118,7 +119,32 @@ Window {
     }
 
 
+    Rectangle
+    {
+        id:imageRect
 
+    }
+
+    Button
+    {
+        id:startButton
+        x: imageRect.x/2 - startButton.width/2
+        y: imageRect.height/6 +imageRect.y
+        text:"Open"
+
+    onClicked:{
+        VidoeStreamer.openVideoCamera()
+        opencvImage.visible = true
+    }
+
+    Connections{
+        target: liveImageProvider
+        function onImageChanged()
+        {
+            opencvImage.reload()
+        }
+    }
+        }
 
 }
 
