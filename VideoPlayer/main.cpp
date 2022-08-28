@@ -15,10 +15,9 @@ int main(int argc, char *argv[])
     QGuiApplication app(argc, argv);
 
     QQmlApplicationEngine engine;
-    VidoeStreamer videoStreamer;
+    VidoeStreamer  *videoStreamer(new VidoeStreamer);
     OpenCvImageProvider *liveImageProvider(new OpenCvImageProvider);
-    engine.rootContext()->setContextProperty("VidoeStreamer", &videoStreamer);
-    engine.addImageProvider("live",liveImageProvider) ;
+    engine.rootContext()->setContextProperty("VidoeStreamer", videoStreamer);
     engine.rootContext()->setContextProperty("liveImageProvider",liveImageProvider);
 
     const QUrl url(u"qrc:/VideoPlayer/main.qml"_qs);

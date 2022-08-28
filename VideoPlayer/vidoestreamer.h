@@ -10,7 +10,7 @@
 
 
 
-class VidoeStreamer : public QObject
+Q_INVOKABLE class VidoeStreamer : public QObject
 {
     Q_OBJECT
 public:
@@ -19,7 +19,7 @@ public:
     void streamVideo();
 
 public slots:
-    void openVideoCamera();
+  Q_INVOKABLE  void openVideoCamera();
 
 private:
     cv::Mat frame;

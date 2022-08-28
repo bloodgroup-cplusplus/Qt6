@@ -44,7 +44,7 @@ Window {
             border.width:3
            Image{
                id:openCvImage
-              source:VidoeStreamer.openVideoCamera()
+               source:videoStreamer.get
               visible:true
            }
         }
