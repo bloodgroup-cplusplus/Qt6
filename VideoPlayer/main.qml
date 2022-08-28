@@ -35,6 +35,14 @@ Window {
         height:400
         anchors.fill:parent
         anchors.margins:20
+        Rectangle
+        {
+            id:imageRect
+            width:100
+            height:100
+            border.color:"black"
+            border.width:3
+        }
     }
 
 
@@ -74,11 +82,6 @@ Window {
 
 
                 }
-
-
-
-
-
     }
 
 
@@ -119,11 +122,7 @@ Window {
     }
 
 
-    Rectangle
-    {
-        id:imageRect
 
-    }
 
     Button
     {

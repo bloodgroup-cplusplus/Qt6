@@ -26,7 +26,10 @@ void VidoeStreamer::streamVideo()
 
 void VidoeStreamer::openVideoCamera()
 {
-    double fps = cap.get(cv::CAP_PROP_FPS);
+    const std::string LENA_FRAME = "/Users/bhushansharma/Programs/Qt6/opencv/samples/data/lena.jpg";
+    const cv::Mat simple_image = cv::imread(LENA_FRAME);
+    double fps = cap.get(cv::CAP_PROP_FPS); 
     tUpdate.start(1000/fps);
 }
+
 
