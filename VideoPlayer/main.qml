@@ -42,6 +42,11 @@ Window {
             height:100
             border.color:"black"
             border.width:3
+           Image{
+               id:openCvImage
+              source:VidoeStreamer.openVideoCamera()
+              visible:true
+           }
         }
     }
 
@@ -124,7 +129,7 @@ Window {
 
 
 
-    Button
+  /*  Button
     {
         id:startButton
         x: imageRect.x/2 - startButton.width/2
@@ -143,7 +148,7 @@ Window {
             opencvImage.reload()
         }
     }
-        }
+        }*/
 
 }
 
