@@ -3,9 +3,10 @@
 
 using namespace std;
 
-int main(int argc, char * argv[])
+int main()
 {
-    PictureClub pc( argc, argv);
+    std::cout<<"works upto here "<<std::endl;
+    PictureClub pc;
     cout << "Hello World!" << endl;
     return 0;
 }

@@ -9,7 +9,7 @@ class PictureClub
 {
     typedef std::vector<cv::Rect> Rect_vector;
 public:
-    PictureClub(int argc, char * argv[]);
+    PictureClub();
     ~PictureClub();
 
     // Detect face
