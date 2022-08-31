@@ -26,8 +26,6 @@ PictureClub::PictureClub():processing_size(640,480)
     cvtGray();
     auto faces = DetectFace();
     auto eyes = DetectEyes(faces[0]);
-
-
     eyes[0].x+= faces[0].x;
     eyes[0].y+= faces[0].y;
     //ShowImage("Original");
@@ -99,7 +97,7 @@ void PictureClub::EnlargeRects(const cv::Rect& rect)
 
             if(distance< kernel_radius)
             {
-                double rho_differential = (1 -cos(distance/kernel_radius*2 *3.142))*3;
+                double rho_differential = (1 -cos(distance/kernel_radius*2 *3.142))*4;
 
                 p = -diff  * (rho_differential/kernel_radius);
 
