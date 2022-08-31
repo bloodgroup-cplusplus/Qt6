@@ -30,12 +30,13 @@ public:
 
     const cv::Size &getProcessing_size() const;
     void setProcessing_size(const cv::Size &newProcessing_size);
-    void ShowImage(const std::string wname = "Debug Show")
-
+    void ShowImage(const std::string wname = "DebugShow")
     {
         cv::imshow(wname, capture_image);
+
         cv::waitKey();
     }
+
 
 private:
     cv::VideoCapture * capture_device;

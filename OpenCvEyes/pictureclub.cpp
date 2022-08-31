@@ -9,9 +9,9 @@ PictureClub::PictureClub():processing_size(640,480)
     capture_device = new cv::VideoCapture;
     const std::string  LENA_FNAME="/Users/bhushansharma/Programs/Qt6/opencv/samples/data/lena.jpg";
 
-    const  cv::Mat sample_image=cv::imread(LENA_FNAME);
+     capture_image=cv::imread(LENA_FNAME);
 
-    if(sample_image.empty())
+    if(capture_image.empty())
     {
         std::cout<<"Image not successfully loaded !"<<std::endl;
     }
@@ -21,16 +21,18 @@ PictureClub::PictureClub():processing_size(640,480)
 
    while(1)
     {
-    cv::imshow("Image", sample_image);
-    GrabImage(sample_image);
+    //cv::imshow("Image", sample_image);
+    GrabImage(capture_image);
     cvtGray();
     auto faces = DetectFace();
-    /*auto eyes = DetectEyes(faces[0]);
+    auto eyes = DetectEyes(faces[0]);
+
+
     eyes[0].x+= faces[0].x;
     eyes[0].y+= faces[0].y;
-    ShowImage("Original");
+    //ShowImage("Original");
     EnlargeRects(eyes[0]);
-    ShowImage("Enlarged");*/
+    ShowImage("Enlarged");
     cv::waitKey(0);
     }
 }
@@ -55,9 +57,6 @@ PictureClub::Rect_vector PictureClub::DetectFace()
     cv::CascadeClassifier faceCascade;
     faceCascade.load("/Users/bhushansharma/Programs/Qt6/opencv/data/haarcascades/haarcascade_frontalface_alt.xml");
     if(faceCascade.empty()) std::cout<<"Xml file for face is not loaded"<<std::endl;
-    cv::CascadeClassifier eyeCascade;
-    eyeCascade.load( "/Users/bhushansharma/Programs/Qt6/opencv/data/haarcascades/haarcascade_eye.xml");
-    if(eyeCascade.empty())std::cout<<"Xml file for eyes is not loaded"<<std::endl;
     std::vector<cv::Rect> face_region;
 
     faceCascade.detectMultiScale(grayscaled_capture,face_region);
@@ -66,7 +65,7 @@ PictureClub::Rect_vector PictureClub::DetectFace()
                   [this] (const cv::Rect & fr){
 
         cv::rectangle(capture_image, fr,C_GREEN);
-        //this->DetectEyes(fr);
+        this->DetectEyes(fr);
 
 
     });
@@ -127,9 +126,13 @@ void PictureClub::EnlargeRects(const cv::Rect& rect)
 
 PictureClub::Rect_vector PictureClub::DetectEyes(const cv::Rect &face_rect)
 {
+      cv::CascadeClassifier eyeCascade;
+    eyeCascade.load( "/Users/bhushansharma/Programs/Qt6/opencv/data/haarcascades/haarcascade_eye.xml");
+    if(eyeCascade.empty())std::cout<<"Xml file for eyes is not loaded"<<std::endl;
+
     cv::Mat  eye_region_image(grayscaled_capture,face_rect);
     std::vector<cv::Rect> eye_region;
-    eyes_classifier.detectMultiScale(eye_region_image,eye_region);
+    eyeCascade.detectMultiScale(eye_region_image,eye_region);
 
 
     cv::Point2i   offset;
