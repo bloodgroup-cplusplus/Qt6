@@ -6,21 +6,24 @@ const cv::Scalar C_VLUE(255,0,0);
 PictureClub::PictureClub():processing_size(640,480)
 {
 
-    capture_device = new cv::VideoCapture;
-    const std::string  LENA_FNAME="/Users/bhushansharma/Programs/Qt6/opencv/samples/data/lena.jpg";
+    cv::VideoCapture cap(1);
+    //const std::string  LENA_FNAME="/Users/bhushansharma/Programs/Qt6/opencv/samples/data/lena.jpg";
 
-     capture_image=cv::imread(LENA_FNAME);
+     //capture_image=cv::imread(LENA_FNAME);
 
-    if(capture_image.empty())
+/*    if(capture_image.empty())
     {
         std::cout<<"Image not successfully loaded !"<<std::endl;
     }
     std::cout<<"Its working upto here "<<std::endl;
+
     cv::namedWindow("Image ", cv::WINDOW_AUTOSIZE);
 
+    */
 
    while(1)
     {
+       cap.read(capture_image);
     //cv::imshow("Image", sample_image);
     GrabImage(capture_image);
     cvtGray();
