@@ -40,7 +40,7 @@ public:
 
 private:
     cv::VideoCapture * capture_device;
-    cv::Mat_<uint8_t> grayscaled_capture;
+    cv::Mat grayscaled_capture;
     cv::Mat capture_image;
     cv::Size processing_size;
     cv::CascadeClassifier face_classifier;

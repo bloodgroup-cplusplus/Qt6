@@ -5,37 +5,41 @@ const cv::Scalar C_VLUE(255,0,0);
 
 PictureClub::PictureClub():processing_size(640,480)
 {
+    //const std::string path = "/Users/bhushansharma/Downloads/videoplayback (1).mp4";
+    cv::VideoCapture cap(0);
 
-    cv::VideoCapture cap(1);
     //const std::string  LENA_FNAME="/Users/bhushansharma/Programs/Qt6/opencv/samples/data/lena.jpg";
 
      //capture_image=cv::imread(LENA_FNAME);
 
-/*    if(capture_image.empty())
-    {
-        std::cout<<"Image not successfully loaded !"<<std::endl;
-    }
-    std::cout<<"Its working upto here "<<std::endl;
 
     cv::namedWindow("Image ", cv::WINDOW_AUTOSIZE);
 
-    */
-
    while(1)
     {
-       cap.read(capture_image);
-    //cv::imshow("Image", sample_image);
-    GrabImage(capture_image);
+     cap.read(capture_image);
+    cv::imshow("Image", capture_image);
+    cv::waitKey(50);
+   }
+   /*GrabImage(capture_image);
     cvtGray();
-    auto faces = DetectFace();
-    auto eyes = DetectEyes(faces[0]);
-    eyes[0].x+= faces[0].x;
-    eyes[0].y+= faces[0].y;
-    //ShowImage("Original");
-    EnlargeRects(eyes[0]);
-    ShowImage("Enlarged");
-    cv::waitKey(0);
+   auto faces = DetectFace();
+   if(!faces.empty())
+   {
+
+         auto eyes = DetectEyes(faces[0]);
+         eyes[0].x+= faces[0].x;
+        eyes[0].y+= faces[0].y;
+        //ShowImage("Original");
+        if(!eyes.empty())
+        {
+           EnlargeRects(eyes[0]);
+        ShowImage("Enlarged");
+        }
+
     }
+   }
+   */
 }
 
 
@@ -131,21 +135,25 @@ PictureClub::Rect_vector PictureClub::DetectEyes(const cv::Rect &face_rect)
     eyeCascade.load( "/Users/bhushansharma/Programs/Qt6/opencv/data/haarcascades/haarcascade_eye.xml");
     if(eyeCascade.empty())std::cout<<"Xml file for eyes is not loaded"<<std::endl;
 
-    cv::Mat  eye_region_image(grayscaled_capture,face_rect);
-    std::vector<cv::Rect> eye_region;
-    eyeCascade.detectMultiScale(eye_region_image,eye_region);
+       if(!face_rect.empty())
+      {
 
 
-    cv::Point2i   offset;
-    offset.x = face_rect.x;
-    offset.y = face_rect.y;
+        cv::Mat  eye_region_image(grayscaled_capture,face_rect);
+        std::vector<cv::Rect> eye_region;
+        eyeCascade.detectMultiScale(eye_region_image,eye_region);
 
-    std::for_each(eye_region.begin(),eye_region.end(),
-                  [&] (const cv::Rect &er)
-    {
-        cv::Rect  absolute_er(er); {
-            absolute_er.x +=  offset.x;
-            absolute_er.y+= offset.y;
+
+        cv::Point2i   offset;
+        offset.x = face_rect.x;
+        offset.y = face_rect.y;
+
+            std::for_each(eye_region.begin(),eye_region.end(),
+                        [&] (const cv::Rect &er)
+        {
+                 cv::Rect  absolute_er(er); {
+                absolute_er.x +=  offset.x;
+                absolute_er.y+= offset.y;
 
         }
 
@@ -154,6 +162,10 @@ PictureClub::Rect_vector PictureClub::DetectEyes(const cv::Rect &face_rect)
     });
 
     return eye_region;
+       }
+
+       cv::Mat empty;
+       return empty;
 
 }
 
