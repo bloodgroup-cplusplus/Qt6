@@ -2,11 +2,22 @@
 #define PICTURECLUB_H
 #include<iostream>
 #include"../opencv/include/opencv2/opencv.hpp"
+#include<ApplicationServices/ApplicationServices.h>
 
 
+//'/System/Library/Frameworks/ApplicationServices.framework'
+
+
+
+
+CGPoint mypoint = CGPoint(34,342);
+typedef uint32_t CGDirectDisplayID;
+CGDirectDisplayID display_id = CGMainDisplayID();
+CGDisplayMoveCursorToPoint(display_id,myPoint);
 
 class PictureClub
 {
+
     typedef std::vector<cv::Rect> Rect_vector;
 public:
     PictureClub();
