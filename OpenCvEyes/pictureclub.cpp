@@ -14,6 +14,7 @@ PictureClub::PictureClub():processing_size(640,480)
 
 
     cv::namedWindow("Image ", cv::WINDOW_AUTOSIZE);
+    cv::resizeWindow("Image",300,300);
 
    while(1)
     {
