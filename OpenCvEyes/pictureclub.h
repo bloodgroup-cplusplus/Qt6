@@ -5,6 +5,13 @@
 #include<ApplicationServices/ApplicationServices.h>
 
 
+/*#include<Carbon/Carbon.h>
+#include<CoreGraphics/CGGeometry.h>
+#include<CoreGraphics/CGDirectDisplay.h>
+*/
+
+
+
 //'/System/Library/Frameworks/ApplicationServices.framework'
 
 
