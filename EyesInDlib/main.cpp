@@ -4,9 +4,13 @@
 #include "../../dlib/dlib/data_io.h"
 #include "../opencv/modules/core/include/opencv2/core.hpp"
 #include "../opencv/modules/core/include/opencv2/core/types_c.h"
+#include "../opencv/modules/core/include/opencv2/core/core_c.h"
 #include "../opencv/include/opencv2/opencv.hpp"
+#include "../../dlib/dlib/image_processing.h"
 #include "../../dlib/dlib/image_processing/frontal_face_detector.h"
 #include "../../dlib/dlib/opencv/cv_image.h"
+#include "../../dlib/dlib/opencv/to_open_cv_abstract.h"
+
 
 //using namespace std;
 //using namespace dlib;
@@ -69,17 +73,18 @@ std::vector<std::vector<int>> shape_to_vector(std::vector<std::vector<int>> shap
      std::vector<std::vector<int>>shape_again(68,std::vector<int>(2,0));
 
 
+
      while(1)
      {
          cap.read(image_reader);
          cv::cvtColor(image_reader,gray,cv::COLOR_BGR2GRAY);
-         dlib::vector<dlib::bgr_pixel> dlibFrame;
+         dlib::array2d<dlib::bgr_pixel> dlibFrame;
          dlib::assign_image(dlibFrame,dlib::cv_image<dlib::bgr_pixel>(image_reader));
         rectangle_in_images= detector(dlibFrame);
         for (dlib::rectangle rect: rectangle_in_images)
         {
 
-                detected_object= predictor(gray,rect);
+                detected_object= predictor(dlibFrame,rect);
                 shape_again=shape_to_vector(shape,detected_object);
                 for(std::vector vec:shape_again)
                 {
