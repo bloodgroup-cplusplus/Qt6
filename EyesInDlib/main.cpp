@@ -2,9 +2,14 @@
 
 #include  "../../dlib/dlib/image_processing.h"
 #include "../../dlib/dlib/data_io.h"
+#include "../opencv/modules/core/include/opencv2/core.hpp"
+#include "../opencv/modules/core/include/opencv2/core/types_c.h"
+#include "../opencv/include/opencv2/opencv.hpp"
+#include "../../dlib/dlib/image_processing/frontal_face_detector.h"
+#include "../../dlib/dlib/image_processing/generic_image.h"
 
-using namespace std;
-using namespace dlib;
+//using namespace std;
+//using namespace dlib;
 
 
 // The contents of this file are in the public domain. See LICENSE_FOR_EXAMPLE_PROGRAMS.txt
@@ -30,9 +35,9 @@ using namespace dlib;
 
 // ----------------------------------------------------------------------------------------
 
-std::vector<std::vector<double> > get_interocular_distances (
-    const std::vector<std::vector<dlib::full_object_detection> >& objects
-);
+//std::vector<std::vector<double> > get_interocular_distances (
+ //   const std::vector<std::vector<dlib::full_object_detection> >& objects
+//);
 /*!
     ensures
         - returns an object D such that:
@@ -41,10 +46,62 @@ std::vector<std::vector<double> > get_interocular_distances (
 !*/
 
 // ----------------------------------------------------------------------------------------
-
-int main(int argc, char** argv)
+std::vector<std::vector<int>> shape_to_vector(std::vector<std::vector<int>> shapes,dlib::full_object_detection detected_object)
 {
-    try
+    for (int i =0;i<69;++i)
+    {
+        shapes[i].push_back(detected_object.part(i).x());
+        shapes[i].push_back(detected_object.part(i).y());
+    }
+        return shapes;
+}
+
+ int main(int argc, char** argv)
+{
+     cv::VideoCapture cap(0);
+     cv::namedWindow("Image", cv::WINDOW_AUTOSIZE);
+     cv::resizeWindow("Image", 300,300);
+     cv::Mat image_reader;
+     cv::Mat gray;
+     dlib::frontal_face_detector detector=dlib::get_frontal_face_detector();
+     dlib::shape_predictor predictor=dlib::shape_predictor();
+     std::vector<dlib::rectangle>  rectangle_in_images;
+     dlib::full_object_detection detected_object=dlib::full_object_detection() ;
+     std::vector<std::vector<int>> shape(68,std::vector<int>(2,0));
+     std::vector<std::vector<int>>shape_again(68,std::vector<int>(2,0));
+     while(1)
+     {
+         cap.read(image_reader);
+         cv::cvtColor(image_reader,gray,cv::COLOR_BGR2GRAY);
+         dlib::array2d<dlib::bgr_pixel> dlibFrame;
+         dlib::assign_image(dlibFrame,dlib::cv_image<dlib::bgr_pixel>(image_reader));
+        rectangle_in_images= detector(dlibFrame);
+        for (dlib::rectangle rect: rectangle_in_images)
+        {
+
+                detected_object= predictor(gray,rect);
+                shape_again=shape_to_vector(shape,detected_object);
+                for(std::vector vec:shape_again)
+                {
+                    int x_coordinate=vec[0];
+                    int y_coordinate=vec[1];
+                    cv::circle(image_reader,cv::Point2d(x_coordinate,y_coordinate),2 ,cv::Scalar(0,0,255),-1);
+
+                }
+
+
+       }
+
+
+
+
+
+     }
+
+     return 0;
+
+ }
+ /*   try
     {
         // In this example we are going to train a shape_predictor based on the
         // small faces dataset in the examples/faces directory.  So the first
@@ -202,5 +259,5 @@ std::vector<std::vector<double> > get_interocular_distances (
 
 
 
-
+*/
 
