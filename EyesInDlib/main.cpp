@@ -6,11 +6,10 @@
 #include "../opencv/modules/core/include/opencv2/core/types_c.h"
 #include "../opencv/include/opencv2/opencv.hpp"
 #include "../../dlib/dlib/image_processing/frontal_face_detector.h"
-#include "../../dlib/dlib/image_processing/generic_image.h"
+#include "../../dlib/dlib/opencv/cv_image.h"
 
 //using namespace std;
 //using namespace dlib;
-
 
 // The contents of this file are in the public domain. See LICENSE_FOR_EXAMPLE_PROGRAMS.txt
 /*
@@ -29,7 +28,6 @@
     prediction tasks.  But here we demonstrate it only on a simple face
     landmarking task.
 */
-
 
 
 
@@ -69,11 +67,13 @@ std::vector<std::vector<int>> shape_to_vector(std::vector<std::vector<int>> shap
      dlib::full_object_detection detected_object=dlib::full_object_detection() ;
      std::vector<std::vector<int>> shape(68,std::vector<int>(2,0));
      std::vector<std::vector<int>>shape_again(68,std::vector<int>(2,0));
+
+
      while(1)
      {
          cap.read(image_reader);
          cv::cvtColor(image_reader,gray,cv::COLOR_BGR2GRAY);
-         dlib::array2d<dlib::bgr_pixel> dlibFrame;
+         dlib::vector<dlib::bgr_pixel> dlibFrame;
          dlib::assign_image(dlibFrame,dlib::cv_image<dlib::bgr_pixel>(image_reader));
         rectangle_in_images= detector(dlibFrame);
         for (dlib::rectangle rect: rectangle_in_images)
@@ -85,20 +85,19 @@ std::vector<std::vector<int>> shape_to_vector(std::vector<std::vector<int>> shap
                 {
                     int x_coordinate=vec[0];
                     int y_coordinate=vec[1];
-                    cv::circle(image_reader,cv::Point2d(x_coordinate,y_coordinate),2 ,cv::Scalar(0,0,255),-1);
+                    cv::circle(image_reader,cv::Point2d(x_coordinate,y_coordinate),2 ,cv::Scalar (0,0,255),-1);
 
                 }
 
 
+
        }
 
+        std::vector<int> left = {36,37,38,39,40,41}; // keypoint indices for left eye
+        std::vector<int> right = {42,43,44,45,46,47}; // keypoint indices for right ey
 
 
-
-
-     }
-
-     return 0;
+     }  return 0;
 
  }
  /*   try
