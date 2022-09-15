@@ -58,6 +58,8 @@ std::vector<std::vector<int>> shape_to_vector(std::vector<std::vector<int>> shap
         return shapes;
 }
 
+
+
  int main(int argc, char** argv)
 {
      cv::VideoCapture cap(0);
@@ -66,13 +68,12 @@ std::vector<std::vector<int>> shape_to_vector(std::vector<std::vector<int>> shap
      cv::Mat image_reader;
      cv::Mat gray;
      dlib::frontal_face_detector detector=dlib::get_frontal_face_detector();
+     //const std::string value = "shape_predictor_68_face_landmarks.dat";
      dlib::shape_predictor predictor=dlib::shape_predictor();
      std::vector<dlib::rectangle>  rectangle_in_images;
      dlib::full_object_detection detected_object=dlib::full_object_detection() ;
      std::vector<std::vector<int>> shape(68,std::vector<int>(2,0));
      std::vector<std::vector<int>>shape_again(68,std::vector<int>(2,0));
-
-
 
      while(1)
      {
@@ -96,10 +97,28 @@ std::vector<std::vector<int>> shape_to_vector(std::vector<std::vector<int>> shap
 
 
 
+                cv::imshow("Image",image_reader);
+                cv::waitKey(40);
+
        }
+
+        /*
 
         std::vector<int> left = {36,37,38,39,40,41}; // keypoint indices for left eye
         std::vector<int> right = {42,43,44,45,46,47}; // keypoint indices for right ey
+        cv::Mat1i  left_mask(image_reader.rows,image_reader.cols,0);
+        cv::fillConvexPoly(left_mask,left,cv::Scalar(255,255,255));
+
+        cv::Mat1i right_mask(image_reader.rows,image_reader.cols,0);
+        cv::fillConvexPoly(right_mask,right,cv::Scalar(255,255,255));
+
+
+
+
+        */
+
+
+
 
 
      }  return 0;
