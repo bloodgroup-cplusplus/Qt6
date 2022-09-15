@@ -8,8 +8,10 @@
 #include "../opencv/include/opencv2/opencv.hpp"
 #include "../../dlib/dlib/image_processing.h"
 #include "../../dlib/dlib/image_processing/frontal_face_detector.h"
+#include"../../dlib/dlib/image_processing/shape_predictor.h"
 #include "../../dlib/dlib/opencv/cv_image.h"
 #include "../../dlib/dlib/opencv/to_open_cv_abstract.h"
+#include"../../dlib/shape_predictor_68_face_landmarks.hpp"
 
 
 //using namespace std;
@@ -48,59 +50,68 @@
 !*/
 
 // ----------------------------------------------------------------------------------------
-std::vector<std::vector<int>> shape_to_vector(std::vector<std::vector<int>> shapes,dlib::full_object_detection detected_object)
+void shape_to_vector(std::vector<std::vector<int>> shapes,dlib::full_object_detection detected_object)
 {
-    for (int i =0;i<69;++i)
+    for (int i =0;i<68;++i)
     {
-        shapes[i].push_back(detected_object.part(i).x());
-        shapes[i].push_back(detected_object.part(i).y());
+        std::vector<int> v1;
+        v1.push_back(detected_object.part(i).x());
+        v1.push_back(detected_object.part(i).y());
+        shapes.push_back(v1);
     }
-        return shapes;
 }
 
 
 
  int main(int argc, char** argv)
 {
-     cv::VideoCapture cap(0);
-     cv::namedWindow("Image", cv::WINDOW_AUTOSIZE);
-     cv::resizeWindow("Image", 300,300);
-     cv::Mat image_reader;
+     //cv::VideoCapture cap(1);
+    // cv::namedWindow("Image", cv::WINDOW_AUTOSIZE);
+     std::string image="/Users/bhushansharma/Programs/Qt6/EyesInDlib/image.png";
+     cv::Mat image_reader=cv::imread(image);
      cv::Mat gray;
+     //cv::imshow("image",image_reader);
+     //cv::waitKey(0);
      dlib::frontal_face_detector detector=dlib::get_frontal_face_detector();
-     //const std::string value = "shape_predictor_68_face_landmarks.dat";
-     dlib::shape_predictor predictor=dlib::shape_predictor();
+     dlib::shape_predictor sp;
+     std::stringstream landmarksstream;
+     landmarksstream.write((const char *) shape_predictor_68_face_landmarks_dat,shape_predictor_68_face_landmarks_dat_len);
+     deserialize(sp,landmarksstream);
+     //dlib::shape_predictor predictor=dlib::shape_predictor();
      std::vector<dlib::rectangle>  rectangle_in_images;
      dlib::full_object_detection detected_object=dlib::full_object_detection() ;
-     std::vector<std::vector<int>> shape(68,std::vector<int>(2,0));
-     std::vector<std::vector<int>>shape_again(68,std::vector<int>(2,0));
+     std::vector<std::vector<int>> shape(68,std::vector<int>(2));
 
-     while(1)
-     {
-         cap.read(image_reader);
+     //while(1)
+    // {
+         //cap.read(image_reader);
          cv::cvtColor(image_reader,gray,cv::COLOR_BGR2GRAY);
-         dlib::array2d<dlib::bgr_pixel> dlibFrame;
-         dlib::assign_image(dlibFrame,dlib::cv_image<dlib::bgr_pixel>(image_reader));
-        rectangle_in_images= detector(dlibFrame);
+          image_reader=cv::imread(image);
+        dlib::array2d<dlib::bgr_pixel> dlibFrame;
+         dlib::assign_image(dlibFrame,dlib::cv_image<dlib::bgr_pixel>(image_reader));        rectangle_in_images= detector(dlibFrame);
         for (dlib::rectangle rect: rectangle_in_images)
         {
 
-                detected_object= predictor(dlibFrame,rect);
-                shape_again=shape_to_vector(shape,detected_object);
-                for(std::vector vec:shape_again)
+                detected_object= sp(dlibFrame,rect);
+                shape_to_vector(shape,detected_object);
+                std::cout<<shape.size()<<std::endl;
+                for(std::vector vec:shape)
+
+
+
+
                 {
-                    int x_coordinate=vec[0];
+                   int x_coordinate=vec[0];
                     int y_coordinate=vec[1];
+                    //std::cout<<x_coordinate<<std::endl;
+                    //std::cout<<y_coordinate<<std::endl;
                     cv::circle(image_reader,cv::Point2d(x_coordinate,y_coordinate),2 ,cv::Scalar (0,0,255),-1);
 
                 }
 
-
-
-                cv::imshow("Image",image_reader);
-                cv::waitKey(40);
-
-       }
+      }
+       cv::imshow("Image", image_reader);
+       cv::waitKey(0);
 
         /*
 
@@ -121,7 +132,8 @@ std::vector<std::vector<int>> shape_to_vector(std::vector<std::vector<int>> shap
 
 
 
-     }  return 0;
+     //}
+        return 0;
 
  }
  /*   try
