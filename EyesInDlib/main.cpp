@@ -54,9 +54,11 @@ void shape_to_vector(std::vector<std::vector<int>> shapes,dlib::full_object_dete
 {
     for (int i =0;i<68;++i)
     {
-        std::vector<int> v1;
+         std::vector<int> v1;
         v1.push_back(detected_object.part(i).x());
-        v1.push_back(detected_object.part(i).y());
+        std::cout<<detected_object.part(i).x()<<std::endl;
+         std::cout<<detected_object.part(i).y()<<std::endl;
+         v1.push_back(detected_object.part(i).y());
         shapes.push_back(v1);
     }
 }
@@ -95,19 +97,20 @@ void shape_to_vector(std::vector<std::vector<int>> shapes,dlib::full_object_dete
                 detected_object= sp(dlibFrame,rect);
                 shape_to_vector(shape,detected_object);
                 std::cout<<shape.size()<<std::endl;
-                for(std::vector vec:shape)
+               for(std::vector<int> vec:shape)
 
 
 
 
-                {
-                   int x_coordinate=vec[0];
+               {
+
+                  int x_coordinate=vec[0];
                     int y_coordinate=vec[1];
                     //std::cout<<x_coordinate<<std::endl;
                     //std::cout<<y_coordinate<<std::endl;
-                    cv::circle(image_reader,cv::Point2d(x_coordinate,y_coordinate),2 ,cv::Scalar (0,0,255),-1);
+                   cv::circle(image_reader,cv::Point2d(x_coordinate,y_coordinate),2 ,cv::Scalar (0,0,255),-1);
 
-                }
+                //}
 
       }
        cv::imshow("Image", image_reader);
