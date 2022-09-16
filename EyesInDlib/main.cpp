@@ -1,4 +1,5 @@
 #include <iostream>
+#include<vector>
 
 #include  "../../dlib/dlib/image_processing.h"
 #include "../../dlib/dlib/data_io.h"
@@ -50,7 +51,7 @@
 !*/
 
 // ----------------------------------------------------------------------------------------
-void shape_to_vector(std::vector<std::vector<int>> shapes,dlib::full_object_detection detected_object)
+/*void shape_to_vector(std::vector<std::vector<int>> shapes,dlib::full_object_detection detected_object)
 {
     for (int i =0;i<68;++i)
     {
@@ -62,6 +63,7 @@ void shape_to_vector(std::vector<std::vector<int>> shapes,dlib::full_object_dete
         shapes.push_back(v1);
     }
 }
+*/
 
 
 
@@ -95,7 +97,15 @@ void shape_to_vector(std::vector<std::vector<int>> shapes,dlib::full_object_dete
         {
 
                 detected_object= sp(dlibFrame,rect);
-                shape_to_vector(shape,detected_object);
+                for(int i=0;i<68;++i)
+                {
+                    std::vector<int> v1;
+                    v1.push_back(detected_object.part(i).x());
+                    v1.push_back(detected_object.part(i).y());
+                    shape.push_back(v1);
+
+                }
+
                 std::cout<<shape.size()<<std::endl;
                for(std::vector<int> vec:shape)
 
@@ -103,7 +113,6 @@ void shape_to_vector(std::vector<std::vector<int>> shapes,dlib::full_object_dete
 
 
                {
-
                   int x_coordinate=vec[0];
                     int y_coordinate=vec[1];
                     //std::cout<<x_coordinate<<std::endl;
@@ -135,7 +144,7 @@ void shape_to_vector(std::vector<std::vector<int>> shapes,dlib::full_object_dete
 
 
 
-     //}
+     }
         return 0;
 
  }
@@ -163,7 +172,7 @@ void shape_to_vector(std::vector<std::vector<int>> shapes,dlib::full_object_dete
         // to learn to identify the position of landmarks on human faces in new
         // images.
         //
-        // Once you have trained a shape_predictor it is always important to
+        // Once you have trained a shape_predictor it is always ant to
         // test it on data it wasn't trained on.  Therefore, we will also load
         // a separate testing set of 5 images.  Once we have a shape_predictor
         // created from the training data we will see how well it works by
