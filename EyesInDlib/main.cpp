@@ -97,7 +97,7 @@
         {
 
                 detected_object= sp(dlibFrame,rect);
-                for(int i=0;i<68;++i)
+                for(int i=0;i<=68;++i)
                 {
                     std::vector<int> v1;
                     v1.push_back(detected_object.part(i).x());
@@ -109,9 +109,6 @@
                 std::cout<<shape.size()<<std::endl;
                for(std::vector<int> vec:shape)
 
-
-
-
                {
                   int x_coordinate=vec[0];
                     int y_coordinate=vec[1];
@@ -121,30 +118,47 @@
 
                 //}
 
-      }
-       cv::imshow("Image", image_reader);
-       cv::waitKey(0);
+                }
 
-        /*
+               }
+            
+
+       //cv::imshow("Image", image_reader);
+       //cv::waitKey(0);
+
+        
 
         std::vector<int> left = {36,37,38,39,40,41}; // keypoint indices for left eye
         std::vector<int> right = {42,43,44,45,46,47}; // keypoint indices for right ey
-        cv::Mat1i  left_mask(image_reader.rows,image_reader.cols,0);
+        cv::Mat left_mask(image_reader.rows,image_reader.cols,0);
+        cv::Mat right_mask(image_reader.rows,image_reader.cols,0);
+        std::cout<<"It hasn't crashed yet"<<std::endl;
         cv::fillConvexPoly(left_mask,left,cv::Scalar(255,255,255));
-
-        cv::Mat1i right_mask(image_reader.rows,image_reader.cols,0);
+        std::cout<<"I thought it would crash here"<<std::endl;
         cv::fillConvexPoly(right_mask,right,cv::Scalar(255,255,255));
 
+        int left_threshold=40;
+        int right_threshold=50;
+
+        //cv::Mat r = cv::Mat(image_reader,cv::Rect();
+        cv::Mat2d r;
+        for(int i=0;i<image_reader.rows; i++)
+        {
+            for(int j=0;j<image_reader.cols; j++)
+            {
+                        std::cout<<image_reader.at<uchar>(i,j)<<std::endl;
+            }
+
+        }
 
 
 
-        */
+        
 
 
 
 
 
-     }
         return 0;
 
  }
