@@ -1,6 +1,6 @@
 #include <iostream>
 #include<vector>
-
+#include<algorithm>
 #include  "../../dlib/dlib/image_processing.h"
 #include "../../dlib/dlib/data_io.h"
 #include "../opencv/modules/core/include/opencv2/core.hpp"
@@ -33,7 +33,8 @@
          cv::cvtColor(image_reader,gray,cv::COLOR_BGR2GRAY);
           image_reader=cv::imread(image);
         dlib::array2d<dlib::bgr_pixel> dlibFrame;
-         dlib::assign_image(dlibFrame,dlib::cv_image<dlib::bgr_pixel>(image_reader));        rectangle_in_images= detector(dlibFrame);
+         dlib::assign_image(dlibFrame,dlib::cv_image<dlib::bgr_pixel>(image_reader));
+         rectangle_in_images= detector(dlibFrame);
         for (dlib::rectangle rect: rectangle_in_images)
         {
 
@@ -62,26 +63,40 @@
                }
             
 
-       //cv::imshow("Image", image_reader);
-       //cv::waitKey(0);
+       cv::imshow("Image", image_reader);
+       cv::waitKey(0);
 
         
 
         std::vector<int> left = {36,37,38,39,40,41}; // keypoint indices for left eye
         std::vector<int> right = {42,43,44,45,46,47}; // keypoint indices for right ey
+        std::vector<cv::Point> left_point;
+        std::vector<cv::Point> right_point;
+        for(std::vector<int> vec:shape)
+        {
+            int x=vec[0];
+            int y=vec[1];
+            if(std::find(left.begin(),left.end(),x)!=left.end())
+            {
+                left_point.push_back(cv::Point(x,y));
+
+            }
+            if(std::find()(right.begin(),right.end(),x)!=right.end())
+            {
+                right_point.push_back(cv::Point(x,y));
+            }
+
+
+        }
         std::cout<<"It is ok till here"<<std::endl;
         cv::Mat left_mask(image_reader.rows,image_reader.cols,0);
         cv::Mat right_mask(image_reader.rows,image_reader.cols,0);
 
         std::cout<<"It might have crashed here "<<std::endl;
-        cv::fillConvexPoly(left_mask,left,cv::Scalar(255,255,255),cv::CV_32S,0);
-        //cv::fillConvexPoly(left_mask,left,cv::Scalar(255,255,255));
-        //cv::fillConvexPoly(right_mask,right,cv::Scalar(255,255,255));
+        cv::fillConvexPoly(left_mask,left_point,cv::Scalar(255,255,255),0);
+        cv::fillConvexPoly(right_mask,right,cv::Scalar(255,255,255),0);
         int left_threshold=40;
         int right_threshold=50;
-
-
-
         return 0;
 
  }
