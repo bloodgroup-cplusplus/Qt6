@@ -1,0 +1,14 @@
+# Target labels
+ xnnpack-populate
+# Source files and their labels
+/Users/bhushansharma/Programs/Qt6/EyeVideoPlay/_deps/xnnpack-subbuild/CMakeFiles/xnnpack-populate
+/Users/bhushansharma/Programs/Qt6/EyeVideoPlay/_deps/xnnpack-subbuild/CMakeFiles/xnnpack-populate.rule
+/Users/bhushansharma/Programs/Qt6/EyeVideoPlay/_deps/xnnpack-subbuild/CMakeFiles/xnnpack-populate-complete.rule
+/Users/bhushansharma/Programs/Qt6/EyeVideoPlay/src/xnnpack-populate-stamp/xnnpack-populate-build.rule
+/Users/bhushansharma/Programs/Qt6/EyeVideoPlay/src/xnnpack-populate-stamp/xnnpack-populate-configure.rule
+/Users/bhushansharma/Programs/Qt6/EyeVideoPlay/src/xnnpack-populate-stamp/xnnpack-populate-download.rule
+/Users/bhushansharma/Programs/Qt6/EyeVideoPlay/src/xnnpack-populate-stamp/xnnpack-populate-install.rule
+/Users/bhushansharma/Programs/Qt6/EyeVideoPlay/src/xnnpack-populate-stamp/xnnpack-populate-mkdir.rule
+/Users/bhushansharma/Programs/Qt6/EyeVideoPlay/src/xnnpack-populate-stamp/xnnpack-populate-patch.rule
+/Users/bhushansharma/Programs/Qt6/EyeVideoPlay/src/xnnpack-populate-stamp/xnnpack-populate-test.rule
+/Users/bhushansharma/Programs/Qt6/EyeVideoPlay/src/xnnpack-populate-stamp/xnnpack-populate-update.rule

@@ -1,0 +1,2 @@
+/Library/Developer/CommandLineTools/usr/bin/ar qc libruy_frontend.a CMakeFiles/ruy_frontend.dir/frontend.cc.o
+/Library/Developer/CommandLineTools/usr/bin/ranlib libruy_frontend.a

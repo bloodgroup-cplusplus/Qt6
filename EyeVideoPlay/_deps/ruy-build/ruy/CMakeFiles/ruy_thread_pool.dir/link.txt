@@ -1,0 +1,2 @@
+/Library/Developer/CommandLineTools/usr/bin/ar qc libruy_thread_pool.a CMakeFiles/ruy_thread_pool.dir/thread_pool.cc.o
+/Library/Developer/CommandLineTools/usr/bin/ranlib libruy_thread_pool.a

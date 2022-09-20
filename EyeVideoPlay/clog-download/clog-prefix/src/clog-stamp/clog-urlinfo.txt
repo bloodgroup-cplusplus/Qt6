@@ -1,0 +1,12 @@
+# This is a generated file and its contents are an internal implementation detail.
+# The download step will be re-executed if anything in this file changes.
+# No other meaning or use of this file is supported.
+
+method=url
+command=/opt/homebrew/Cellar/cmake/3.23.2/bin/cmake;-P;/Users/bhushansharma/Programs/Qt6/EyeVideoPlay/clog-download/clog-prefix/src/clog-stamp/download-clog.cmake;COMMAND;/opt/homebrew/Cellar/cmake/3.23.2/bin/cmake;-P;/Users/bhushansharma/Programs/Qt6/EyeVideoPlay/clog-download/clog-prefix/src/clog-stamp/verify-clog.cmake;COMMAND;/opt/homebrew/Cellar/cmake/3.23.2/bin/cmake;-P;/Users/bhushansharma/Programs/Qt6/EyeVideoPlay/clog-download/clog-prefix/src/clog-stamp/extract-clog.cmake
+source_dir=/Users/bhushansharma/Programs/Qt6/EyeVideoPlay/clog-source
+work_dir=/Users/bhushansharma/Programs/Qt6/EyeVideoPlay
+url(s)=https://github.com/pytorch/cpuinfo/archive/d5e37adf1406cf899d7d9ec1d317c47506ccb970.tar.gz
+hash=SHA256=3f2dc1970f397a0e59db72f9fca6ff144b216895c1d606f6c94a507c1e53a025
+no_extract=
+

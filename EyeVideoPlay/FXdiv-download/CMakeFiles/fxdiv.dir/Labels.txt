@@ -1,0 +1,14 @@
+# Target labels
+ fxdiv
+# Source files and their labels
+/Users/bhushansharma/Programs/Qt6/EyeVideoPlay/FXdiv-download/CMakeFiles/fxdiv
+/Users/bhushansharma/Programs/Qt6/EyeVideoPlay/FXdiv-download/CMakeFiles/fxdiv.rule
+/Users/bhushansharma/Programs/Qt6/EyeVideoPlay/FXdiv-download/CMakeFiles/fxdiv-complete.rule
+/Users/bhushansharma/Programs/Qt6/EyeVideoPlay/FXdiv-download/fxdiv-prefix/src/fxdiv-stamp/fxdiv-build.rule
+/Users/bhushansharma/Programs/Qt6/EyeVideoPlay/FXdiv-download/fxdiv-prefix/src/fxdiv-stamp/fxdiv-configure.rule
+/Users/bhushansharma/Programs/Qt6/EyeVideoPlay/FXdiv-download/fxdiv-prefix/src/fxdiv-stamp/fxdiv-download.rule
+/Users/bhushansharma/Programs/Qt6/EyeVideoPlay/FXdiv-download/fxdiv-prefix/src/fxdiv-stamp/fxdiv-install.rule
+/Users/bhushansharma/Programs/Qt6/EyeVideoPlay/FXdiv-download/fxdiv-prefix/src/fxdiv-stamp/fxdiv-mkdir.rule
+/Users/bhushansharma/Programs/Qt6/EyeVideoPlay/FXdiv-download/fxdiv-prefix/src/fxdiv-stamp/fxdiv-patch.rule
+/Users/bhushansharma/Programs/Qt6/EyeVideoPlay/FXdiv-download/fxdiv-prefix/src/fxdiv-stamp/fxdiv-test.rule
+/Users/bhushansharma/Programs/Qt6/EyeVideoPlay/FXdiv-download/fxdiv-prefix/src/fxdiv-stamp/fxdiv-update.rule

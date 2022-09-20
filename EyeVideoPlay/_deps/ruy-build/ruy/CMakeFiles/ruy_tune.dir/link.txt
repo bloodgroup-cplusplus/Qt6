@@ -1,0 +1,2 @@
+/Library/Developer/CommandLineTools/usr/bin/ar qc libruy_tune.a CMakeFiles/ruy_tune.dir/tune.cc.o
+/Library/Developer/CommandLineTools/usr/bin/ranlib libruy_tune.a

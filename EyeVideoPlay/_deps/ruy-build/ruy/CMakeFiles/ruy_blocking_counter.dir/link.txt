@@ -1,0 +1,2 @@
+/Library/Developer/CommandLineTools/usr/bin/ar qc libruy_blocking_counter.a CMakeFiles/ruy_blocking_counter.dir/blocking_counter.cc.o
+/Library/Developer/CommandLineTools/usr/bin/ranlib libruy_blocking_counter.a

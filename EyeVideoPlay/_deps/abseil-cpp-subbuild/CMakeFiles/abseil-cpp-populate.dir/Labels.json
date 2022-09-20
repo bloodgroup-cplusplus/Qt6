@@ -1,0 +1,46 @@
+{
+	"sources" : 
+	[
+		{
+			"file" : "/Users/bhushansharma/Programs/Qt6/EyeVideoPlay/_deps/abseil-cpp-subbuild/CMakeFiles/abseil-cpp-populate"
+		},
+		{
+			"file" : "/Users/bhushansharma/Programs/Qt6/EyeVideoPlay/_deps/abseil-cpp-subbuild/CMakeFiles/abseil-cpp-populate.rule"
+		},
+		{
+			"file" : "/Users/bhushansharma/Programs/Qt6/EyeVideoPlay/_deps/abseil-cpp-subbuild/CMakeFiles/abseil-cpp-populate-complete.rule"
+		},
+		{
+			"file" : "/Users/bhushansharma/Programs/Qt6/EyeVideoPlay/src/abseil-cpp-populate-stamp/abseil-cpp-populate-build.rule"
+		},
+		{
+			"file" : "/Users/bhushansharma/Programs/Qt6/EyeVideoPlay/src/abseil-cpp-populate-stamp/abseil-cpp-populate-configure.rule"
+		},
+		{
+			"file" : "/Users/bhushansharma/Programs/Qt6/EyeVideoPlay/src/abseil-cpp-populate-stamp/abseil-cpp-populate-download.rule"
+		},
+		{
+			"file" : "/Users/bhushansharma/Programs/Qt6/EyeVideoPlay/src/abseil-cpp-populate-stamp/abseil-cpp-populate-install.rule"
+		},
+		{
+			"file" : "/Users/bhushansharma/Programs/Qt6/EyeVideoPlay/src/abseil-cpp-populate-stamp/abseil-cpp-populate-mkdir.rule"
+		},
+		{
+			"file" : "/Users/bhushansharma/Programs/Qt6/EyeVideoPlay/src/abseil-cpp-populate-stamp/abseil-cpp-populate-patch.rule"
+		},
+		{
+			"file" : "/Users/bhushansharma/Programs/Qt6/EyeVideoPlay/src/abseil-cpp-populate-stamp/abseil-cpp-populate-test.rule"
+		},
+		{
+			"file" : "/Users/bhushansharma/Programs/Qt6/EyeVideoPlay/src/abseil-cpp-populate-stamp/abseil-cpp-populate-update.rule"
+		}
+	],
+	"target" : 
+	{
+		"labels" : 
+		[
+			"abseil-cpp-populate"
+		],
+		"name" : "abseil-cpp-populate"
+	}
+}

@@ -1,0 +1,2 @@
+/Library/Developer/CommandLineTools/usr/bin/ar qc libruy_pack_avx.a CMakeFiles/ruy_pack_avx.dir/pack_avx.cc.o
+/Library/Developer/CommandLineTools/usr/bin/ranlib libruy_pack_avx.a

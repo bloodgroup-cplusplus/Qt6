@@ -1,0 +1,2 @@
+/Library/Developer/CommandLineTools/usr/bin/ar qc libruy_profiler_profiler.a CMakeFiles/ruy_profiler_profiler.dir/profiler.cc.o CMakeFiles/ruy_profiler_profiler.dir/treeview.cc.o
+/Library/Developer/CommandLineTools/usr/bin/ranlib libruy_profiler_profiler.a

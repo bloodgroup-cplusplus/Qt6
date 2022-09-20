@@ -1,0 +1,2 @@
+/Library/Developer/CommandLineTools/usr/bin/ar qc libcpuinfo_internals.a CMakeFiles/cpuinfo_internals.dir/src/init.c.o CMakeFiles/cpuinfo_internals.dir/src/api.c.o CMakeFiles/cpuinfo_internals.dir/src/cache.c.o CMakeFiles/cpuinfo_internals.dir/src/arm/uarch.c.o CMakeFiles/cpuinfo_internals.dir/src/arm/cache.c.o CMakeFiles/cpuinfo_internals.dir/src/arm/mach/init.c.o CMakeFiles/cpuinfo_internals.dir/src/mach/topology.c.o
+/Library/Developer/CommandLineTools/usr/bin/ranlib libcpuinfo_internals.a

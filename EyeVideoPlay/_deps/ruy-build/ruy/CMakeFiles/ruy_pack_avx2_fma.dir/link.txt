@@ -1,0 +1,2 @@
+/Library/Developer/CommandLineTools/usr/bin/ar qc libruy_pack_avx2_fma.a CMakeFiles/ruy_pack_avx2_fma.dir/pack_avx2_fma.cc.o
+/Library/Developer/CommandLineTools/usr/bin/ranlib libruy_pack_avx2_fma.a

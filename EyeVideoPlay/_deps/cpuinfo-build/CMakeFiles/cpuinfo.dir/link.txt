@@ -1,0 +1,2 @@
+/Library/Developer/CommandLineTools/usr/bin/ar qc libcpuinfo.a CMakeFiles/cpuinfo.dir/src/init.c.o CMakeFiles/cpuinfo.dir/src/api.c.o CMakeFiles/cpuinfo.dir/src/cache.c.o CMakeFiles/cpuinfo.dir/src/arm/uarch.c.o CMakeFiles/cpuinfo.dir/src/arm/cache.c.o CMakeFiles/cpuinfo.dir/src/arm/mach/init.c.o CMakeFiles/cpuinfo.dir/src/mach/topology.c.o
+/Library/Developer/CommandLineTools/usr/bin/ranlib libcpuinfo.a

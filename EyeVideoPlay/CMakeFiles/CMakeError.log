@@ -1,0 +1,139 @@
+Compiling the C compiler identification source file "CMakeCCompilerId.c" failed.
+Compiler: /Library/Developer/CommandLineTools/usr/bin/cc 
+Build flags: 
+Id flags:  
+
+The output was:
+1
+ld: library not found for -lSystem
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+
+
+Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" failed.
+Compiler: /Library/Developer/CommandLineTools/usr/bin/c++ 
+Build flags: 
+Id flags:  
+
+The output was:
+1
+ld: library not found for -lc++
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+
+
+Performing C++ SOURCE FILE Test COMPILER_SUPPORT_Wlogicalop failed with the following output:
+Change Dir: /Users/bhushansharma/Programs/Qt6/EyeVideoPlay/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make -f Makefile cmTC_7927f/fast && /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_7927f.dir/build.make CMakeFiles/cmTC_7927f.dir/build
+Building CXX object CMakeFiles/cmTC_7927f.dir/src.cxx.o
+/Library/Developer/CommandLineTools/usr/bin/c++ -DCOMPILER_SUPPORT_Wlogicalop  -pedantic -Wall -Wextra -Wundef -Wcast-align -Wchar-subscripts -Wnon-virtual-dtor -Wunused-local-typedefs -Wpointer-arith -Wwrite-strings -Wformat-security -Wshorten-64-to-32 -Werror -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk -fPIE   -Wlogical-op -MD -MT CMakeFiles/cmTC_7927f.dir/src.cxx.o -MF CMakeFiles/cmTC_7927f.dir/src.cxx.o.d -o CMakeFiles/cmTC_7927f.dir/src.cxx.o -c /Users/bhushansharma/Programs/Qt6/EyeVideoPlay/CMakeFiles/CMakeTmp/src.cxx
+error: unknown warning option '-Wlogical-op'; did you mean '-Wlong-long'? [-Werror,-Wunknown-warning-option]
+make[1]: *** [CMakeFiles/cmTC_7927f.dir/src.cxx.o] Error 1
+make: *** [cmTC_7927f/fast] Error 2
+
+
+Source file was:
+int main() { return 0; }
+Performing C++ SOURCE FILE Test COMPILER_SUPPORT_wd981 failed with the following output:
+Change Dir: /Users/bhushansharma/Programs/Qt6/EyeVideoPlay/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make -f Makefile cmTC_63760/fast && /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_63760.dir/build.make CMakeFiles/cmTC_63760.dir/build
+Building CXX object CMakeFiles/cmTC_63760.dir/src.cxx.o
+/Library/Developer/CommandLineTools/usr/bin/c++ -DCOMPILER_SUPPORT_wd981  -pedantic -Wall -Wextra -Wundef -Wcast-align -Wchar-subscripts -Wnon-virtual-dtor -Wunused-local-typedefs -Wpointer-arith -Wwrite-strings -Wformat-security -Wshorten-64-to-32 -Wenum-conversion -Wc++11-extensions -Wdouble-promotion -Wshadow -Wno-psabi -Wno-variadic-macros -Wno-long-long -fno-check-new -fno-common -fstrict-aliasing -Werror -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk -fPIE   -wd981 -MD -MT CMakeFiles/cmTC_63760.dir/src.cxx.o -MF CMakeFiles/cmTC_63760.dir/src.cxx.o.d -o CMakeFiles/cmTC_63760.dir/src.cxx.o -c /Users/bhushansharma/Programs/Qt6/EyeVideoPlay/CMakeFiles/CMakeTmp/src.cxx
+clang: error: unknown argument: '-wd981'
+make[1]: *** [CMakeFiles/cmTC_63760.dir/src.cxx.o] Error 1
+make: *** [cmTC_63760/fast] Error 2
+
+
+Source file was:
+int main() { return 0; }
+Performing C++ SOURCE FILE Test COMPILER_SUPPORT_wd2304 failed with the following output:
+Change Dir: /Users/bhushansharma/Programs/Qt6/EyeVideoPlay/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make -f Makefile cmTC_172ab/fast && /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_172ab.dir/build.make CMakeFiles/cmTC_172ab.dir/build
+Building CXX object CMakeFiles/cmTC_172ab.dir/src.cxx.o
+/Library/Developer/CommandLineTools/usr/bin/c++ -DCOMPILER_SUPPORT_wd2304  -pedantic -Wall -Wextra -Wundef -Wcast-align -Wchar-subscripts -Wnon-virtual-dtor -Wunused-local-typedefs -Wpointer-arith -Wwrite-strings -Wformat-security -Wshorten-64-to-32 -Wenum-conversion -Wc++11-extensions -Wdouble-promotion -Wshadow -Wno-psabi -Wno-variadic-macros -Wno-long-long -fno-check-new -fno-common -fstrict-aliasing -Werror -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk -fPIE   -wd2304 -MD -MT CMakeFiles/cmTC_172ab.dir/src.cxx.o -MF CMakeFiles/cmTC_172ab.dir/src.cxx.o.d -o CMakeFiles/cmTC_172ab.dir/src.cxx.o -c /Users/bhushansharma/Programs/Qt6/EyeVideoPlay/CMakeFiles/CMakeTmp/src.cxx
+clang: error: unknown argument: '-wd2304'
+make[1]: *** [CMakeFiles/cmTC_172ab.dir/src.cxx.o] Error 1
+make: *** [cmTC_172ab/fast] Error 2
+
+
+Source file was:
+int main() { return 0; }
+Performing C++ SOURCE FILE Test COMPILER_SUPPORT_OPENMP failed with the following output:
+Change Dir: /Users/bhushansharma/Programs/Qt6/EyeVideoPlay/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make -f Makefile cmTC_864b5/fast && /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_864b5.dir/build.make CMakeFiles/cmTC_864b5.dir/build
+Building CXX object CMakeFiles/cmTC_864b5.dir/src.cxx.o
+/Library/Developer/CommandLineTools/usr/bin/c++ -DCOMPILER_SUPPORT_OPENMP  -pedantic -Wall -Wextra -Wundef -Wcast-align -Wchar-subscripts -Wnon-virtual-dtor -Wunused-local-typedefs -Wpointer-arith -Wwrite-strings -Wformat-security -Wshorten-64-to-32 -Wenum-conversion -Wc++11-extensions -Wdouble-promotion -Wshadow -Wno-psabi -Wno-variadic-macros -Wno-long-long -fno-check-new -fno-common -fstrict-aliasing  -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk -fPIE   -fopenmp -MD -MT CMakeFiles/cmTC_864b5.dir/src.cxx.o -MF CMakeFiles/cmTC_864b5.dir/src.cxx.o.d -o CMakeFiles/cmTC_864b5.dir/src.cxx.o -c /Users/bhushansharma/Programs/Qt6/EyeVideoPlay/CMakeFiles/CMakeTmp/src.cxx
+clang: error: unsupported option '-fopenmp'
+make[1]: *** [CMakeFiles/cmTC_864b5.dir/src.cxx.o] Error 1
+make: *** [cmTC_864b5/fast] Error 2
+
+
+Source file was:
+int main() { return 0; }
+Determining if the strtof_l exist failed with the following output:
+Change Dir: /Users/bhushansharma/Programs/Qt6/EyeVideoPlay/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make -f Makefile cmTC_f2c28/fast && /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_f2c28.dir/build.make CMakeFiles/cmTC_f2c28.dir/build
+Building CXX object CMakeFiles/cmTC_f2c28.dir/CheckSymbolExists.cxx.o
+/Library/Developer/CommandLineTools/usr/bin/c++   -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk -fPIE -MD -MT CMakeFiles/cmTC_f2c28.dir/CheckSymbolExists.cxx.o -MF CMakeFiles/cmTC_f2c28.dir/CheckSymbolExists.cxx.o.d -o CMakeFiles/cmTC_f2c28.dir/CheckSymbolExists.cxx.o -c /Users/bhushansharma/Programs/Qt6/EyeVideoPlay/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx
+/Users/bhushansharma/Programs/Qt6/EyeVideoPlay/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx:8:19: error: use of undeclared identifier 'strtof_l'
+  return ((int*)(&strtof_l))[argc];
+                  ^
+1 error generated.
+make[1]: *** [CMakeFiles/cmTC_f2c28.dir/CheckSymbolExists.cxx.o] Error 1
+make: *** [cmTC_f2c28/fast] Error 2
+
+
+File /Users/bhushansharma/Programs/Qt6/EyeVideoPlay/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx:
+/* */
+#include <stdlib.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef strtof_l
+  return ((int*)(&strtof_l))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+Determining if the strtoull_l exist failed with the following output:
+Change Dir: /Users/bhushansharma/Programs/Qt6/EyeVideoPlay/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make -f Makefile cmTC_bff47/fast && /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_bff47.dir/build.make CMakeFiles/cmTC_bff47.dir/build
+Building CXX object CMakeFiles/cmTC_bff47.dir/CheckSymbolExists.cxx.o
+/Library/Developer/CommandLineTools/usr/bin/c++   -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk -fPIE -MD -MT CMakeFiles/cmTC_bff47.dir/CheckSymbolExists.cxx.o -MF CMakeFiles/cmTC_bff47.dir/CheckSymbolExists.cxx.o.d -o CMakeFiles/cmTC_bff47.dir/CheckSymbolExists.cxx.o -c /Users/bhushansharma/Programs/Qt6/EyeVideoPlay/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx
+/Users/bhushansharma/Programs/Qt6/EyeVideoPlay/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx:8:19: error: use of undeclared identifier 'strtoull_l'; did you mean 'strtoull'?
+  return ((int*)(&strtoull_l))[argc];
+                  ^~~~~~~~~~
+                  strtoull
+/Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk/usr/include/stdlib.h:178:3: note: 'strtoull' declared here
+         strtoull(const char *__str, char **__endptr, int __base);
+         ^
+1 error generated.
+make[1]: *** [CMakeFiles/cmTC_bff47.dir/CheckSymbolExists.cxx.o] Error 1
+make: *** [cmTC_bff47/fast] Error 2
+
+
+File /Users/bhushansharma/Programs/Qt6/EyeVideoPlay/CMakeFiles/CMakeTmp/CheckSymbolExists.cxx:
+/* */
+#include <stdlib.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef strtoull_l
+  return ((int*)(&strtoull_l))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+Checking whether the ASM compiler is GNU using "--version" did not match "(GNU assembler)|(GCC)|(Free Software Foundation)":
+Apple clang version 13.1.6 (clang-1316.0.21.2.5)
+Target: arm64-apple-darwin21.5.0
+Thread model: posix
+InstalledDir: /Library/Developer/CommandLineTools/usr/bin

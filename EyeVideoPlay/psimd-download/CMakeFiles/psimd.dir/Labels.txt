@@ -1,0 +1,14 @@
+# Target labels
+ psimd
+# Source files and their labels
+/Users/bhushansharma/Programs/Qt6/EyeVideoPlay/psimd-download/CMakeFiles/psimd
+/Users/bhushansharma/Programs/Qt6/EyeVideoPlay/psimd-download/CMakeFiles/psimd.rule
+/Users/bhushansharma/Programs/Qt6/EyeVideoPlay/psimd-download/CMakeFiles/psimd-complete.rule
+/Users/bhushansharma/Programs/Qt6/EyeVideoPlay/psimd-download/psimd-prefix/src/psimd-stamp/psimd-build.rule
+/Users/bhushansharma/Programs/Qt6/EyeVideoPlay/psimd-download/psimd-prefix/src/psimd-stamp/psimd-configure.rule
+/Users/bhushansharma/Programs/Qt6/EyeVideoPlay/psimd-download/psimd-prefix/src/psimd-stamp/psimd-download.rule
+/Users/bhushansharma/Programs/Qt6/EyeVideoPlay/psimd-download/psimd-prefix/src/psimd-stamp/psimd-install.rule
+/Users/bhushansharma/Programs/Qt6/EyeVideoPlay/psimd-download/psimd-prefix/src/psimd-stamp/psimd-mkdir.rule
+/Users/bhushansharma/Programs/Qt6/EyeVideoPlay/psimd-download/psimd-prefix/src/psimd-stamp/psimd-patch.rule
+/Users/bhushansharma/Programs/Qt6/EyeVideoPlay/psimd-download/psimd-prefix/src/psimd-stamp/psimd-test.rule
+/Users/bhushansharma/Programs/Qt6/EyeVideoPlay/psimd-download/psimd-prefix/src/psimd-stamp/psimd-update.rule

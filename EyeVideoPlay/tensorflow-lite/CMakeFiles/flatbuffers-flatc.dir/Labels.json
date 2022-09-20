@@ -1,0 +1,43 @@
+{
+	"sources" : 
+	[
+		{
+			"file" : "/Users/bhushansharma/Programs/Qt6/EyeVideoPlay/tensorflow-lite/CMakeFiles/flatbuffers-flatc"
+		},
+		{
+			"file" : "/Users/bhushansharma/Programs/Qt6/EyeVideoPlay/tensorflow-lite/CMakeFiles/flatbuffers-flatc.rule"
+		},
+		{
+			"file" : "/Users/bhushansharma/Programs/Qt6/EyeVideoPlay/tensorflow-lite/CMakeFiles/flatbuffers-flatc-complete.rule"
+		},
+		{
+			"file" : "/Users/bhushansharma/Programs/Qt6/EyeVideoPlay/flatbuffers-flatc/src/flatbuffers-flatc-stamp/flatbuffers-flatc-build.rule"
+		},
+		{
+			"file" : "/Users/bhushansharma/Programs/Qt6/EyeVideoPlay/flatbuffers-flatc/src/flatbuffers-flatc-stamp/flatbuffers-flatc-configure.rule"
+		},
+		{
+			"file" : "/Users/bhushansharma/Programs/Qt6/EyeVideoPlay/flatbuffers-flatc/src/flatbuffers-flatc-stamp/flatbuffers-flatc-download.rule"
+		},
+		{
+			"file" : "/Users/bhushansharma/Programs/Qt6/EyeVideoPlay/flatbuffers-flatc/src/flatbuffers-flatc-stamp/flatbuffers-flatc-install.rule"
+		},
+		{
+			"file" : "/Users/bhushansharma/Programs/Qt6/EyeVideoPlay/flatbuffers-flatc/src/flatbuffers-flatc-stamp/flatbuffers-flatc-mkdir.rule"
+		},
+		{
+			"file" : "/Users/bhushansharma/Programs/Qt6/EyeVideoPlay/flatbuffers-flatc/src/flatbuffers-flatc-stamp/flatbuffers-flatc-patch.rule"
+		},
+		{
+			"file" : "/Users/bhushansharma/Programs/Qt6/EyeVideoPlay/flatbuffers-flatc/src/flatbuffers-flatc-stamp/flatbuffers-flatc-update.rule"
+		}
+	],
+	"target" : 
+	{
+		"labels" : 
+		[
+			"flatbuffers-flatc"
+		],
+		"name" : "flatbuffers-flatc"
+	}
+}

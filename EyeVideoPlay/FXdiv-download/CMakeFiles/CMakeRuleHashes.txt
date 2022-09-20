@@ -1,0 +1,11 @@
+# Hashes of file build rules.
+5d87621510222ef4185bd2b119a58333 CMakeFiles/fxdiv
+de154268fd0332af585232781f1a3d5e CMakeFiles/fxdiv-complete
+e69a74e2d30dc5f92cc957c8a08df9cf fxdiv-prefix/src/fxdiv-stamp/fxdiv-build
+69a35b931ed1810aafa41ad0ce03ba96 fxdiv-prefix/src/fxdiv-stamp/fxdiv-configure
+02915073cc60e146aed4bfa9edf62309 fxdiv-prefix/src/fxdiv-stamp/fxdiv-download
+448917cf6352d068c04d7397155e2330 fxdiv-prefix/src/fxdiv-stamp/fxdiv-install
+d28f83abad9c1ad19a3c3389ce731222 fxdiv-prefix/src/fxdiv-stamp/fxdiv-mkdir
+0f861bc75e282c7ec7faafe24f37428e fxdiv-prefix/src/fxdiv-stamp/fxdiv-patch
+e265bec8a0e8528fac4b0d43ecec5a79 fxdiv-prefix/src/fxdiv-stamp/fxdiv-test
+9cfdda694b02a48c61829dc12f255571 fxdiv-prefix/src/fxdiv-stamp/fxdiv-update

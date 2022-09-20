@@ -1,0 +1,13 @@
+# Target labels
+ flatbuffers-flatc
+# Source files and their labels
+/Users/bhushansharma/Programs/Qt6/EyeVideoPlay/tensorflow-lite/CMakeFiles/flatbuffers-flatc
+/Users/bhushansharma/Programs/Qt6/EyeVideoPlay/tensorflow-lite/CMakeFiles/flatbuffers-flatc.rule
+/Users/bhushansharma/Programs/Qt6/EyeVideoPlay/tensorflow-lite/CMakeFiles/flatbuffers-flatc-complete.rule
+/Users/bhushansharma/Programs/Qt6/EyeVideoPlay/flatbuffers-flatc/src/flatbuffers-flatc-stamp/flatbuffers-flatc-build.rule
+/Users/bhushansharma/Programs/Qt6/EyeVideoPlay/flatbuffers-flatc/src/flatbuffers-flatc-stamp/flatbuffers-flatc-configure.rule
+/Users/bhushansharma/Programs/Qt6/EyeVideoPlay/flatbuffers-flatc/src/flatbuffers-flatc-stamp/flatbuffers-flatc-download.rule
+/Users/bhushansharma/Programs/Qt6/EyeVideoPlay/flatbuffers-flatc/src/flatbuffers-flatc-stamp/flatbuffers-flatc-install.rule
+/Users/bhushansharma/Programs/Qt6/EyeVideoPlay/flatbuffers-flatc/src/flatbuffers-flatc-stamp/flatbuffers-flatc-mkdir.rule
+/Users/bhushansharma/Programs/Qt6/EyeVideoPlay/flatbuffers-flatc/src/flatbuffers-flatc-stamp/flatbuffers-flatc-patch.rule
+/Users/bhushansharma/Programs/Qt6/EyeVideoPlay/flatbuffers-flatc/src/flatbuffers-flatc-stamp/flatbuffers-flatc-update.rule

@@ -1,0 +1,2 @@
+/Library/Developer/CommandLineTools/usr/bin/ar qc libruy_denormal.a CMakeFiles/ruy_denormal.dir/denormal.cc.o
+/Library/Developer/CommandLineTools/usr/bin/ranlib libruy_denormal.a
