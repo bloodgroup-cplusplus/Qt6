@@ -1,6 +1,7 @@
 #include <iostream>
 #include<vector>
 #include<algorithm>
+#include<stdint.h>
 #include  "../../dlib/dlib/image_processing.h"
 #include "../../dlib/dlib/data_io.h"
 #include "../opencv/modules/core/include/opencv2/core.hpp"
@@ -29,7 +30,10 @@
      dlib::shape_predictor predictor=dlib::shape_predictor();
      std::vector<dlib::rectangle>  rectangle_in_images;
      dlib::full_object_detection detected_object=dlib::full_object_detection() ;
-     std::vector<std::vector<int>> shape(68,std::vector<int>(2));
+     std::vector<int32_t> left = {36,37,38,39,40,41}; // keypoint indices for left eye
+     std::vector<int32_t> right = {42,43,44,45,46,47}; // keypoint indices for right ey
+//     std::vector<std::vector<int>> shape(68,std::vector<int>(2));
+      std::vector<std::vector<int>> shape;
 
          //cap.read(image_reader);
          cv::cvtColor(image_reader,gray,cv::COLOR_BGR2GRAY);
@@ -41,7 +45,7 @@
         {
 
                 detected_object= sp(dlibFrame,rect);
-                for(int i=0;i<=68;++i)
+                for(int i=0;i<68;++i)
                 {
                     std::vector<int> v1;
                     v1.push_back(detected_object.part(i).x());
@@ -49,7 +53,6 @@
                     shape.push_back(v1);
 
                 }
-                std::cout<<"I think it breaks down here "<<std::endl;
 
                 std::cout<<shape.size()<<std::endl;
                for(std::vector<int> vec:shape)
@@ -62,38 +65,32 @@
 
                 }
 
-               }
+         }
             
 
-//       cv::imshow("Image", image_reader);
- //      cv::waitKey(0);
+      //cv::imshow("Image", image_reader);
+      //cv::waitKey(0);
 
         
 
-        std::vector<int> left = {36,37,38,39,40,41}; // keypoint indices for left eye
-        std::vector<int> right = {42,43,44,45,46,47}; // keypoint indices for right ey
-        std::vector<cv::Point> left_point;
-        std::vector<cv::Point> right_point;
-        for(std::vector<int> vec:shape)
+
+        typedef cv::Point_<int32_t> Points;
+        std::vector<Points> left_point;
+        std::vector<Points> right_point;
+        for (int x: left)
         {
-            int x=vec[0];
-            int y=vec[1];
-            if(std::find(left.begin(),left.end(),x)!=left.end())
-            {
-                left_point.push_back(cv::Point(x,y));
-
-            }
-            if(std::find(right.begin(),right.end(),y)!=right.end())
-            {
-                right_point.push_back(cv::Point(x,y));
-            }
-
-
+            left_point.push_back(Points(detected_object.part(x).x()));
+            right_point.push_back(Points(detected_object.part(x).y()));
         }
-        std::cout<<"It is ok till here"<<std::endl;
+        for(int y:right)
+        {
+            right_point.push_back(Points(detected_object.part(y).x()));
+            right_point.push_back(Points(detected_object.part(y).y()));
+        }
+
+        std::cout<<left_point.size()<<right_point.size()<<std::endl;
         cv::Mat left_mask(image_reader.rows,image_reader.cols,0);
         cv::Mat right_mask(image_reader.rows,image_reader.cols,0);
-        std::cout<<"It might have crashed here "<<std::endl;
         cv::fillConvexPoly(left_mask,left_point,cv::Scalar(255,255,255),0);
         cv::fillConvexPoly(right_mask,right,cv::Scalar(255,255,255),0);
         std::vector<int> pixel_data;
@@ -111,6 +108,11 @@
 
         int left_threshold=40;
         int right_threshold=50;
+
+        //cv2::threshold(r,left_threshold,255,cv2::THRESH_BINARY_INV);
+
+
+
 
 
 
