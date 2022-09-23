@@ -17,7 +17,9 @@
 {
      //cv::VideoCapture cap(1);
      std::string image="/Users/bhushansharma/Programs/Qt6/EyesInDlib/image.png";
-     cv::Mat image_reader=cv::imread(image);
+
+
+     cv::Mat image_reader=cv::imread(image); 
      cv::Mat gray;
      dlib::frontal_face_detector detector=dlib::get_frontal_face_detector();
     dlib::shape_predictor sp;
@@ -63,8 +65,8 @@
                }
             
 
-       cv::imshow("Image", image_reader);
-       cv::waitKey(0);
+//       cv::imshow("Image", image_reader);
+ //      cv::waitKey(0);
 
         
 
@@ -94,20 +96,18 @@
         std::cout<<"It might have crashed here "<<std::endl;
         cv::fillConvexPoly(left_mask,left_point,cv::Scalar(255,255,255),0);
         cv::fillConvexPoly(right_mask,right,cv::Scalar(255,255,255),0);
-        std::vector<double> pixel_data;
-        for(int i=0;i<image_reader.rows;i++)
-        {
-            for(int j=0;j<image_reader.cols;j++)
-            {
-                cv::Vec3b &color = image_reader.at<cv::Vec3b>(i,j);
-                pixel_data.push_back(color[2]);
-            }
-        }
-        cv::Mat r= cv::Mat(pixel_data).reshape(2,2);
-        for(int y:pixel_data)
-        {
-            std::cout<<y<<std::endl;
-        }
+        std::vector<int> pixel_data;
+         for(int r = 0; r < image_reader.rows; ++r) {
+         for(int c = 0; c < image_reader.cols; ++c) {
+             cv::Vec3b color=image_reader.at<cv::Vec3b>(cv::Point(r,c));
+             pixel_data.push_back((int) color[2]);
+
+
+         }
+     }
+
+        std::cout<<"it is here"<<std::endl;
+       // cv::Mat r= cv::Mat(pixel_data).reshape(2,2);
 
         int left_threshold=40;
         int right_threshold=50;
