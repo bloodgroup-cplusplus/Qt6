@@ -7,6 +7,7 @@
 #include "../opencv/modules/core/include/opencv2/core.hpp"
 #include "../opencv/modules/core/include/opencv2/core/types_c.h"
 #include "../opencv/modules/core/include/opencv2/core/core_c.h"
+#include "../opencv/modules/imgproc/include/opencv2/imgproc.hpp"
 #include "../opencv/include/opencv2/opencv.hpp"
 #include "../../dlib/dlib/image_processing.h"
 #include "../../dlib/dlib/image_processing/frontal_face_detector.h"
@@ -33,7 +34,8 @@
      std::vector<int32_t> left = {36,37,38,39,40,41}; // keypoint indices for left eye
      std::vector<int32_t> right = {42,43,44,45,46,47}; // keypoint indices for right ey
 //     std::vector<std::vector<int>> shape(68,std::vector<int>(2));
-      std::vector<std::vector<int>> shape;
+     std::vector<std::vector<int>> shape;
+//     std::vector<cv::Point2i>shape;
 
          //cap.read(image_reader);
          cv::cvtColor(image_reader,gray,cv::COLOR_BGR2GRAY);
@@ -51,16 +53,24 @@
                     v1.push_back(detected_object.part(i).x());
                     v1.push_back(detected_object.part(i).y());
                     shape.push_back(v1);
+                  //  shape.push_back(cv::Point2i(detected_object.part(i).x()));
+                   // shape.push_back(cv::Point2i(detected_object.part(i).y()));
 
                 }
 
                 std::cout<<shape.size()<<std::endl;
-               for(std::vector<int> vec:shape)
+              for(std::vector<int> vec:shape)
+                //for(cv::Point2i  m:shape)
+
 
                {
                   int x_coordinate=vec[0];
+
                     int y_coordinate=vec[1];
                    cv::circle(image_reader,cv::Point2d(x_coordinate,y_coordinate),2 ,cv::Scalar (0,0,255),-1);
+
+                  //  cv::circle(image_reader,cv::Point2d(m.x,m.y),2,cv::Scalar(0,0,255),-1);
+
 
 
                 }
@@ -68,24 +78,23 @@
          }
             
 
-      //cv::imshow("Image", image_reader);
-      //cv::waitKey(0);
+      cv::imshow("Image", image_reader);
+      cv::waitKey(0);
 
         
 
 
-        typedef cv::Point_<int32_t> Points;
-        std::vector<Points> left_point;
-        std::vector<Points> right_point;
+        std::vector<cv::Point2i> left_point;
+        std::vector<cv::Point2i> right_point;
         for (int x: left)
         {
-            left_point.push_back(Points(detected_object.part(x).x()));
-            right_point.push_back(Points(detected_object.part(x).y()));
+            left_point.push_back(cv::Point2i(detected_object.part(x).x()));
+            right_point.push_back(cv::Point2i(detected_object.part(x).y()));
         }
         for(int y:right)
         {
-            right_point.push_back(Points(detected_object.part(y).x()));
-            right_point.push_back(Points(detected_object.part(y).y()));
+            right_point.push_back(cv::Point2i(detected_object.part(y).x()));
+            right_point.push_back(cv::Point2i(detected_object.part(y).y()));
         }
 
         std::cout<<left_point.size()<<right_point.size()<<std::endl;
