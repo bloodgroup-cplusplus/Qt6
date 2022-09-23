@@ -81,7 +81,7 @@
                 left_point.push_back(cv::Point(x,y));
 
             }
-            if(std::find()(right.begin(),right.end(),x)!=right.end())
+            if(std::find(right.begin(),right.end(),x)!=right.end())
             {
                 right_point.push_back(cv::Point(x,y));
             }
@@ -91,12 +91,32 @@
         std::cout<<"It is ok till here"<<std::endl;
         cv::Mat left_mask(image_reader.rows,image_reader.cols,0);
         cv::Mat right_mask(image_reader.rows,image_reader.cols,0);
-
         std::cout<<"It might have crashed here "<<std::endl;
         cv::fillConvexPoly(left_mask,left_point,cv::Scalar(255,255,255),0);
         cv::fillConvexPoly(right_mask,right,cv::Scalar(255,255,255),0);
+        std::vector<double> pixel_data;
+        for(int i=0;i<image_reader.rows;i++)
+        {
+            for(int j=0;j<image_reader.cols;j++)
+            {
+                cv::Vec3b &color = image_reader.at<cv::Vec3b>(i,j);
+                pixel_data.push_back(color[2]);
+            }
+        }
+        cv::Mat r= cv::Mat(pixel_data).reshape(2,2);
+        for(int y:pixel_data)
+        {
+            std::cout<<y<<std::endl;
+        }
+
         int left_threshold=40;
         int right_threshold=50;
+
+
+
+
+
+
         return 0;
 
  }
