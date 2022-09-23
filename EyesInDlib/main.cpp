@@ -83,7 +83,7 @@
                 left_point.push_back(cv::Point(x,y));
 
             }
-            if(std::find(right.begin(),right.end(),x)!=right.end())
+            if(std::find(right.begin(),right.end(),y)!=right.end())
             {
                 right_point.push_back(cv::Point(x,y));
             }
@@ -107,7 +107,7 @@
      }
 
         std::cout<<"it is here"<<std::endl;
-       // cv::Mat r= cv::Mat(pixel_data).reshape(2,2);
+        cv::Mat r= cv::Mat(pixel_data).reshape(image_reader.rows,image_reader.cols);
 
         int left_threshold=40;
         int right_threshold=50;
