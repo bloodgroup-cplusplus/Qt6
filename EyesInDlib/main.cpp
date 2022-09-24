@@ -78,8 +78,8 @@
          }
             
 
-      cv::imshow("Image", image_reader);
-      cv::waitKey(0);
+ //     cv::imshow("Image", image_reader);
+  //    cv::waitKey(0);
 
         
 
@@ -88,20 +88,19 @@
         std::vector<cv::Point2i> right_point;
         for (int x: left)
         {
-            left_point.push_back(cv::Point2i(detected_object.part(x).x()));
-            right_point.push_back(cv::Point2i(detected_object.part(x).y()));
+            left_point.push_back(cv::Point2i(detected_object.part(x).x(),detected_object.part(x).y()));
         }
         for(int y:right)
         {
-            right_point.push_back(cv::Point2i(detected_object.part(y).x()));
-            right_point.push_back(cv::Point2i(detected_object.part(y).y()));
+            right_point.push_back(cv::Point2i(detected_object.part(y).x(),detected_object.part(y).y()));
         }
+
 
         std::cout<<left_point.size()<<right_point.size()<<std::endl;
         cv::Mat left_mask(image_reader.rows,image_reader.cols,0);
         cv::Mat right_mask(image_reader.rows,image_reader.cols,0);
         cv::fillConvexPoly(left_mask,left_point,cv::Scalar(255,255,255),0);
-        cv::fillConvexPoly(right_mask,right,cv::Scalar(255,255,255),0);
+        cv::fillConvexPoly(right_mask,right_point,cv::Scalar(255,255,255),0);
         std::vector<int> pixel_data;
          for(int r = 0; r < image_reader.rows; ++r) {
          for(int c = 0; c < image_reader.cols; ++c) {
@@ -119,9 +118,10 @@
         int right_threshold=50;
 
         //cv2::threshold(r,left_threshold,255,cv2::THRESH_BINARY_INV);
+        cv::Mat left_threshold_output;
+        cv::Mat right_threshold_output;
 
-
-
+//        cv2::threshold(
 
 
 
