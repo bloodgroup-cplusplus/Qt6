@@ -121,8 +121,10 @@
         //cv::threshold(r,left_threshold,255,cv2::THRESH_BINARY_INV);
        // std::vector<int> left_threshold;
         //cv::Mat left_thre=cv::Mat(left_threshold).reshape(image_reader.rows,image_reader.cols);
-       cv::threshold(image_reader,r_out,left_threshold,255,cv::THRESH_BINARY_INV);
-       cv::getStructuringElement(cv::MORPH_ELLIPSE,(4,4));
+         cv::threshold(image_reader,r_out,left_threshold,255,cv::THRESH_BINARY_INV);
+         cv::getStructuringElement(cv::MORPH_ELLIPSE,cv::Point(4,4));
+      // cv::dilate()
+
 
 
 
