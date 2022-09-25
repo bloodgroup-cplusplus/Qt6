@@ -113,15 +113,28 @@
 
         std::cout<<"it is here"<<std::endl;
         cv::Mat r= cv::Mat(pixel_data).reshape(image_reader.rows,image_reader.cols);
+        //cv::Mat r_out = cv::Mat(pixel_data).reshape(image_reader.rows,image_reader.cols);
+        cv::Mat r_out;
 
         int left_threshold=40;
         int right_threshold=50;
+        //cv::threshold(r,left_threshold,255,cv2::THRESH_BINARY_INV);
+       // std::vector<int> left_threshold;
+        //cv::Mat left_thre=cv::Mat(left_threshold).reshape(image_reader.rows,image_reader.cols);
+       cv::threshold(image_reader,r_out,left_threshold,255,cv::THRESH_BINARY_INV);
+       cv::getStructuringElement(cv::MORPH_ELLIPSE,(4,4));
 
-        //cv2::threshold(r,left_threshold,255,cv2::THRESH_BINARY_INV);
-        cv::Mat left_threshold_output;
-        cv::Mat right_threshold_output;
 
-//        cv2::threshold(
+
+
+
+
+
+
+
+
+
+
 
 
 
