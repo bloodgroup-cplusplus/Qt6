@@ -101,28 +101,41 @@
         cv::Mat right_mask(image_reader.rows,image_reader.cols,0);
         cv::fillConvexPoly(left_mask,left_point,cv::Scalar(255,255,255),0);
         cv::fillConvexPoly(right_mask,right_point,cv::Scalar(255,255,255),0);
-        std::vector<int> pixel_data;
+        std::vector<std::vector<double>> pixel_data;
          for(int r = 0; r < image_reader.rows; ++r) {
+             std::vector<double> v1;
          for(int c = 0; c < image_reader.cols; ++c) {
              cv::Vec3b color=image_reader.at<cv::Vec3b>(cv::Point(r,c));
-             pixel_data.push_back((int) color[2]);
-
-
+             v1.push_back((int) color[2]);
          }
+         pixel_data.push_back(v1);
      }
 
-        std::cout<<"it is here"<<std::endl;
-        cv::Mat r= cv::Mat(pixel_data).reshape(image_reader.rows,image_reader.cols);
+
+
+        cv::Mat r=cv::Mat(image_reader.rows,image_reader.cols,30);
+        for(int i=0;i<image_reader.rows; i++)
+        {
+            for(int j=0;j<image_reader.cols;j++)
+            {
+                r.at<double>(i,j) =pixel_data.at(i).at(j);
+            }
+        }
         //cv::Mat r_out = cv::Mat(pixel_data).reshape(image_reader.rows,image_reader.cols);
-        cv::Mat r_out;
+        cv::Mat r_out=cv::Mat::zeros(image_reader.rows,image_reader.cols,30);
 
         int left_threshold=40;
         int right_threshold=50;
         //cv::threshold(r,left_threshold,255,cv2::THRESH_BINARY_INV);
        // std::vector<int> left_threshold;
         //cv::Mat left_thre=cv::Mat(left_threshold).reshape(image_reader.rows,image_reader.cols);
-         cv::threshold(image_reader,r_out,left_threshold,255,cv::THRESH_BINARY_INV);
-         cv::getStructuringElement(cv::MORPH_ELLIPSE,cv::Point(4,4));
+         cv::threshold(r,r_out,left_threshold,255,cv::THRESH_BINARY_INV);
+         //cv::Mat element =cv::getStructuringElement(cv::MORPH_ELLIPSE,cv::Point(4,4));
+         //cv::Mat dilated;
+         //cv::dilate(r_out, dilated, element);
+
+
+
       // cv::dilate()
 
 
