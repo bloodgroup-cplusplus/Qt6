@@ -15,6 +15,7 @@
 #include "../../dlib/dlib/opencv/cv_image.h"
 #include "../../dlib/dlib/opencv/to_open_cv_abstract.h"
 #include"../../dlib/shape_predictor_68_face_landmarks.hpp"
+#
  int main(int argc, char** argv)
 {
      //cv::VideoCapture cap(1);
@@ -131,7 +132,9 @@
         cv::Mat final_mask;
 
         cv::dilate(mask,final_mask,kernel,cv::Point(-1,-1),5);
-          cv::bitwise_and(image_reader,image_reader,final_mask);
+        cv::imshow( "final_mask",final_mask);
+          //cv::bitwise_and(image_reader,image_reader,final_mask);
+          cv::waitKey(0);
 
 
        /*
