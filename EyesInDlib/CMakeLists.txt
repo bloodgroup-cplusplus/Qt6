@@ -14,8 +14,8 @@ add_executable(EyesInDlib
     main.cpp
 )
 
-target_link_libraries( EyesInDlib  ${dlib_LIBS})
-target_link_libraries(EyesInDlib ${OpenCV_LIBS})
+target_link_libraries( EyesInDlib  ${dlib_LIBS}  ${OpenCV_LIBS} )
+target_link_libraries(${PROJECT_NAME}  private "-framework ApplicationServices" )
 
 install(TARGETS EyesInDlib
     LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR})

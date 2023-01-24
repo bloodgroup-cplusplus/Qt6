@@ -15,9 +15,20 @@
 #include "../../dlib/dlib/opencv/cv_image.h"
 #include "../../dlib/dlib/opencv/to_open_cv_abstract.h"
 #include"../../dlib/shape_predictor_68_face_landmarks.hpp"
-#
+#include<QApplication>
+#include<ApplicationServices/ApplicationServices.h>
  int main(int argc, char** argv)
 {
+     QApplication a(argc,argv);
+     // Move the mouse cursor to a new position
+     CGPoint newPos;
+     newPos.x=100;
+     newPos.y=100;
+     CGEventRef move= CGEventCreateMouseEvent(NULL,kCGEventMouseMoved,newPos,kCGMouseButtonLeft);
+     CGEventPost(kCGHIDEventTap,move);
+     CFRelease(move);
+
+       /*
      //cv::VideoCapture cap(1);
      std::string image="/Users/bhushansharma/Programs/Qt6/EyesInDlib/image.png";
 
@@ -121,10 +132,10 @@
         //cv::merge()
                 cv::Mat final_mask;
 
-        //cv::dilate(mask,final_mask,kernel,cv::Point(-1,-1),5);
+        cv::dilate(mask,final_mask,kernel,cv::Point(-1,-1),5);
         //cv::imshow( "final_mask",final_mask);
 
-          cv::bitwise_and(image_reader,image_reader,final_mask);
+          //cv::bitwise_and(image_reader,image_reader,final_mask);
           cv::imshow("final_mask",final_mask);
           cv::waitKey(0);
 
@@ -151,7 +162,7 @@
 
       // cv::dilate()
 
-*/
+
 
 
          }
@@ -161,8 +172,9 @@
   //    cv::waitKey(0);
 
         
+*/
 
-
-               return 0;
+//               return 0;
+        return a.exec();
  }
 
